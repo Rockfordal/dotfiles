@@ -1,0 +1,4 @@
+make clean
+ruby extconf.rb
+make
+
