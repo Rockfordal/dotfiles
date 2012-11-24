@@ -1,0 +1,234 @@
+# Navigering
+hjkl pilar
+
+W    fram ett ord
+w    fram ord
+b    bak ett ord
+6l   fram 6 letters
+2j   ner en rad
+
+gg   början av dokumentet
+G    slutet av dokumentet
+0    början av raden oavsett whitespace
+^    början av raden
+
+fN   hoppa framåt till första 'N'
+3fN  hoppa till 3dje 'N'
+%    hoppa mellan def/end (MachIT plugin för mer)
+
+{    början av paragraf
+(    början av mening
+)    slutet av mening
+}    slutet av paragraf
+
+a    infoga efter markör 
+A    infoga efter raden
+i    infoga
+I    Infoga i början av raden
+r    ändra
+R    ändra+editera
+
+c    ändra ord
+c3w  ändra 3 ord
+cc,C ändra rad
+
+P    klistra in ovanför
+O    infoga på föregående rad
+o    infoga på nästa rad
+
+x    radera tecken
+dw   radera ord
+dl   radera tecken
+dd   klipp ut rad
+yy   kopiera rad
+
+J    joina rader underifrån
+5J   joina 5 rader på en gång
+gJ   joina utan mellanrum
+
+.    upprepa sista
+@: upprepa sista kommando
+,n   spara som ny fil
+
+#
+vit  markera inom tag 
+vat  markera inom tag inklusive whitespace
+
+# Indrag
+>>     dra in
+<<     dra ut
+ctrl+d dra in (INSERT MODE)
+ctrl+t dra ut (INSERT MODE)
+
+# Scrolla
+ctrl+b skärm
+ctrl+f skärm
+ctrl+u halv skärm
+ctrl+d halv skärm
+ctrl+y rad
+ctrl+e rad
+
+zt nära top
+zz nära mitten
+zb nära slutet
+
+# Tabs
+:newtab     ny tab
+:tabs   lista tabbar
+gt          nästa tab
+gT          förra tab
+
+# Split
+Ctrl+w s    split horisontellt
+ctrl+w j    hoppa upp
+ctrl+w k    hoppa ner
+ctrl+w J    flytta ner
+ctrl+w K    flytta upp
+ctrl+w v    split vertikalt
+ctrl+w h    hoppa vänster
+ctrl+w l    hoppa höger
+ctrl+w H    flytta vänster
+ctrl+w L    flytta höger
+ctrl+w c    stäng split/tab
+ctrl+w w    rotera antiklockvist
+ctrl+w W    rotera klockvist
+ctrl+w t    top left
+ctrl+w b    bottom right
+ctrl+w p    till tidigare
+ctrl+w r    rotera
+ctrl+w R    rotera
+ctrl+w X    växla
+ctrl+w T    flytta fönster till ny tab
+ctrl+w O    stäng alla andra fönster
+
+# Buffers
+:ls               listar buffers
+:bd               radera buffer
+:b3               gå till buffer 3
+:bn               nästa buffer
+:bp               förra buffer
+:bf               första buffer
+:bl               sista buffer
+:ba               öppna ALLA buffrar
+
+#kommandon
+:h window-resize
+:e .              filhanteraren
+:bp               sista buffern
+:b namn           öppna buffer
+:set syntax
+:options
+:set ruler
+:set number
+:set laaststatus=2
+:marks
+
+# Folda
+za  toggle
+zo  open
+zc  close
+zk  move up
+zj  move down
+zM  sträng alla
+zR  öppna alla
+
+# Märken
+ma    skapa märke a
+`a    hoppa
+'a    hoppa till början av dess rad
+d't   radera fram till märke t
+'0-'9 från då man stängde vim sist
+``    position före sista hopp
+'.`.  position före sista edit
+!! stora bokstäver för globala annars per fil
+
+# Spela in
+qa  spela in a
+qW  radera ord
+W   framåt ett ord
+P   klistra in
+j   ner en rad
+q   avsluta inspelning
+@a  spela upp a
+5@@ spela upp makro 5 gånger
+
+# Fil-läge
+i    smal/lång/bred
+s    sortering
+r    omvänd sortering
+gh   dölj .-filer
+x    visa fil med associerat program
+d    skapa mapp
+D    radera
+R    döp omm
+-    up
+
+# Grunder
+V       Visuellt läge rader
+v       visuellt läge tecken
+.       upprepa (funkar ej med :kommandon dock)
+ctrl+g  var är jag?
+:helptags ~/.vim/doc      import standard plugin docs
+:call pathogen#helptags() import pathogen plugin docs
+
+# Coolt
+vwc      visuellt markera och infoga över ett ord
+gf       hoppar till fil - funkar med require 'abc' och partials
+
+
+### plugin ###
+
+# Rails
+:A    växla till/från test
+:Rake :Rcontroller :Rmodel :Rview
+:help rails-navigation
+
+# Surround
+cs"'
+cs'"
+ysiw"  Läger till!
+
+# NERD Commenter
+,c<space>  Toggle
+,cc        Ny
+
+# Endwise
+fixar end automatiskt
+
+# Scratch
+Scratch  Nytt dok som inte sparas
+SScratch Nytt dok i ny flik som inte sparas
+
+# Fugutive
+:Gstatus :Gdiff :Gcommit :Gmove :Gremove :Gbrowse :Grep :Gblame
+
+# Bra plugin
+surround / Ragtag
+Snipmate
+tComment / NERD Commenter
+
+# Sök/Ersätt
+:vimgrep /extend/ app/model/*.rb
+:vimgrep /extend/ **/*.rb
+
+#Gary Benhardt
+,t    kör sista test
+,T    kör närmaste test
+,a    kör alla test
+,c    kör features
+,w    kör wip features
+,,    växla sista fil
+,f    /
+,F    .
+,gm   /models/
+,gc   /controllers/
+,gh   /helpers/
+,gv   /views/
+,gl   /libs/
+,gp   /public/
+,gf   /features/
+,gg   Gemfile
+,gr   Rakefile
+,gR   rake routes => ny
+:e %% aktuell sokväg
+
