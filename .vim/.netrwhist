@@ -1,5 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/andersl/rails/urdb19/app/views'
-let g:netrw_dirhist_2='/home/andersl/rails/urdb19/app/views/mpays'
-let g:netrw_dirhist_3='/home/andersl/rails/urdb19'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/rails/sten/app/views/links'
+let g:netrw_dirhist_2='/home/rails/sten/app/views/linktypes'
+let g:netrw_dirhist_3='/home/rails/sten/app/views/users'
+let g:netrw_dirhist_4='/home/rails/sten/app/views/roles'
+let g:netrw_dirhist_5='/home/rails/sten/app/views/properties'
+let g:netrw_dirhist_6='/home/rails/sten/app/views'
+let g:netrw_dirhist_7='/home/rails/sten/app/views/images'
