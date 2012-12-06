@@ -211,7 +211,8 @@ tComment / NERD Commenter
 :vimgrep /extend/ app/model/*.rb
 :vimgrep /extend/ **/*.rb
 
-#Gary Benhardt
+#Test
+,r    kör ruby (ruby runner) /ej gary
 ,t    kör sista test
 ,T    kör närmaste test
 ,a    kör alla test
