@@ -6,6 +6,8 @@ call pathogen#runtime_append_all_bundles()
 
 "anders
 set number
+set guifont=Monaco:h16
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
