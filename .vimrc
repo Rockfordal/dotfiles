@@ -97,10 +97,33 @@ augroup END
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:set t_Co=256 " 256 colors
-:set background=dark
-:color grb256
 
+  set t_Co=256
+  "let g:solarized_termcolors=256
+  "let g:solarized_termtrans=1
+  let g:solarized_contrast="high"
+  let g:solarized_visibility="high"
+
+if has("gui_running")
+  set background=light
+  color mayansmoke
+  "color solarized
+  "color peaksea
+  "color github
+else
+  set background=dark
+  color grb256 "ir_black
+  "color codeschool
+  "color hybrid
+end
+
+set gfn=M+\ 1m\ 13
+"set gfn=Inconsolata-dz\ for\ Powerline\ 13
+"set gfn=Menlo\ for\ Powerline\ 13
+"set gfn=Monospace\ 13
+"set gfn=Envy\ Code\ R\ 13
+
+"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

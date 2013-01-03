@@ -41,6 +41,7 @@ dw   radera ord
 dl   radera tecken
 dd   klipp ut rad
 yy   kopiera rad
+y}   kopiera block
 
 J    joina rader underifrån
 5J   joina 5 rader på en gång
@@ -184,9 +185,10 @@ gf       hoppar till fil - funkar med require 'abc' och partials
 :help rails-navigation
 
 # Surround
-cs"'
-cs'"
-ysiw"  Läger till!
+V: cs"'
+V: cs'"
+V: ysiw"      sätt "" omkring
+I: ctrl+s<p>  skapar hel tag
 
 # NERD Commenter
 ,c<space>  Toggle
@@ -202,22 +204,12 @@ SScratch Nytt dok i ny flik som inte sparas
 # Fugutive
 :Gstatus :Gdiff :Gcommit :Gmove :Gremove :Gbrowse :Grep :Gblame
 
-# Bra plugin
-surround / Ragtag
-Snipmate
-tComment / NERD Commenter
 
 # Sök/Ersätt
 :vimgrep /extend/ app/model/*.rb
 :vimgrep /extend/ **/*.rb
 
-#Gary Benhardt
-,t    kör sista test
-,T    kör närmaste test
-,a    kör alla test
-,c    kör features
-,w    kör wip features
-,,    växla sista fil
+# Fuzzyfinder
 ,f    /
 ,F    .
 ,gm   /models/
@@ -230,5 +222,18 @@ tComment / NERD Commenter
 ,gg   Gemfile
 ,gr   Rakefile
 ,gR   rake routes => ny
+
+#Gary Benhardt
+,t    kör sista test
+,T    kör närmaste test
+,a    kör alla test
+,c    kör features
+,w    kör wip features
+,,    växla sista fil
 :e %% aktuell sokväg
+
+# Bra plugin
+Snipmate  doctype+TAB  infogar komplett doctype-kod!
+MRU       :MRU         öppnar från de 10 senaste dokumenten
+Matchit   %            växlar mellan def end och { }
 
