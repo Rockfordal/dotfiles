@@ -123,6 +123,9 @@ ctrl+w O    stäng alla andra fönster
 :set number
 :set laaststatus=2
 :marks
+:pwd
++:cd                       directory for file
++:lcd                      directory for window
 
 # Folda
 za  toggle
@@ -232,8 +235,12 @@ SScratch Nytt dok i ny flik som inte sparas
 ,,    växla sista fil
 :e %% aktuell sokväg
 
+# Switch colorscheme
+:SetColors all
+F8          Föregående
+shift+F8    Nästa
+
 # Bra plugin
 Snipmate  doctype+TAB  infogar komplett doctype-kod!
 MRU       :MRU         öppnar från de 10 senaste dokumenten
 Matchit   %            växlar mellan def end och { }
-
