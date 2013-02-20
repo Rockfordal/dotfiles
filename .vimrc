@@ -77,7 +77,7 @@ augroup vimrcEx
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
   autocmd FileType python set sw=4 sts=4 et
 
-  autocmd! BufRead,BufNewFile *.sass setfiletype sass 
+  autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
@@ -98,30 +98,49 @@ augroup END
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+  set antialias
   set t_Co=256
-  "let g:solarized_termcolors=256
-  "let g:solarized_termtrans=1
   let g:solarized_contrast="high"
   let g:solarized_visibility="high"
 
 if has("gui_running")
-  set background=light
-  color mayansmoke
-  "color solarized
-  "color peaksea
-  "color github
+  "set background=light
+  "color paper/mayansmoke
+  color paper/solarized "vy
+  "color paper/newspaper
+  "color white/tomorrow
+  "color white/summerfruit
+  "color white/summerfruit256
+  "color white/fluidvision
+  "color white/reliable
+  "color paper/peachpuff
+  "set background=dark
+  "color brown/vilight "js sass
+  "color brown/twilight "html
+  "color railscasts "controller
+  "color grey/xoria256
+  "color red/tetragrammaton
+  "color black/synic
 else
-  set background=dark
-  color grb256 "ir_black
+  "set background=dark
+  let g:solarized_termcolors=256
+  "let g:solarized_termtrans=1
+  "color paper/solarized "vy
+  "color black/grb256
+  color brown/hybrid
   "color codeschool
-  "color hybrid
 end
 
-set gfn=M+\ 1m\ 13
+set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 16
+"set gfn=M+\ 1m\ 16
+"set gfn=Inconsolata\ 16
 "set gfn=Inconsolata-dz\ for\ Powerline\ 13
 "set gfn=Menlo\ for\ Powerline\ 13
 "set gfn=Monospace\ 13
 "set gfn=Envy\ Code\ R\ 13
+let Powerline_symbols = 'fancy'
+set fillchars+=stl:\ ,stlnc:\
+set encoding=utf-8
 
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -413,3 +432,6 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+"set rtp+=~/.vam/vim-addon-manager
+"call vam#ActivateAddons(["FuzzyFinder"])
