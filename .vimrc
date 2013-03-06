@@ -131,13 +131,21 @@ else
   "color codeschool
 end
 
-set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 16
-"set gfn=M+\ 1m\ 16
-"set gfn=Inconsolata\ 16
-"set gfn=Inconsolata-dz\ for\ Powerline\ 13
-"set gfn=Menlo\ for\ Powerline\ 13
-"set gfn=Monospace\ 13
-"set gfn=Envy\ Code\ R\ 13
+if has("win32")
+  set gfn=DejaVu_Sans_Mono_for_Powerline:h16:cANSI
+  au GUIEnter * simalt ~x
+elseif has("mac")
+  set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h16
+elseif has("unix")
+  color white/github
+  set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 16
+  "set gfn=M+\ 1m\ 16
+  "set gfn=Menlo\ for\ Powerline\ 13
+  "set gfn=Inconsolata-dz\ for\ Powerline\ 13
+  "set gfn=Monospace\ 13
+  "set gfn=Envy\ Code\ R\ 13
+endif
+
 let Powerline_symbols = 'fancy'
 set fillchars+=stl:\ ,stlnc:\
 set encoding=utf-8
