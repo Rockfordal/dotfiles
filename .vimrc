@@ -54,6 +54,7 @@ syntax on
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
+set binary noeol
 " use emacs-style tab completion when selecting files, etc
 set wildmode=longest,list
 " make tab completion for files/buffers act like bash
@@ -98,30 +99,64 @@ augroup END
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+  set antialias
   set t_Co=256
-  "let g:solarized_termcolors=256
-  "let g:solarized_termtrans=1
+  set lines=30
+  set columns=85
   let g:solarized_contrast="high"
   let g:solarized_visibility="high"
 
 if has("gui_running")
-  set background=light
-  color mayansmoke
-  "color solarized
-  "color peaksea
-  "color github
+	let $pd = getcwd()
+	if $pd == '/Users/anders/rails/urdb19'
+      color white/espresso-soda
+      "color paper/solarized
+      "color railscasts
+      "color white/fluidvision
+      "color white/tomorrow
+      "color paper/peachpuff
+      "color paper/mayansmoke
+      "color white/reliable
+      "color white/summerfruit
+      "color brown/vilight
+      "color brown/twilight
+      "color grey/xoria256
+      "color red/tetragrammaton
+      "color black/synick
+    elseif $pd == '/Users/anders/rails/angular'
+      color white/github
+    else
+      color paper/newspaper
+    endif
+
+  set transparency=0
+  set guioptions=aAc
+  "egmrL
 else
-  set background=dark
-  color grb256 "ir_black
+  let g:solarized_termcolors=256
+  "let g:solarized_termtrans=1
   "color codeschool
-  "color hybrid
+  "color grey/LastNight
+  color grey/hybrid
 end
 
-set gfn=M+\ 1m\ 13
+set gfn=Meslo\ LG\ S\ DZ\ for\ Powerline:h16
+"set gfn=Ubuntu\ Mono\ derivative\ Powerline:h19
+"set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h16
+"set gfn=Terminus\ For\ Powerline:h19
+"set gfn=Anonymous\ Pro\ for\ Powerline:h19
+"set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h16
+"set gfn=Inconsolata:h16
+"set gfn=Menlo:h14"
+"set gfn=M+\ 1m:h16
+"set gfn=Source\ Code\ Pro:h13
 "set gfn=Inconsolata-dz\ for\ Powerline\ 13
 "set gfn=Menlo\ for\ Powerline\ 13
 "set gfn=Monospace\ 13
 "set gfn=Envy\ Code\ R\ 13
+let Powerline_symbols='fancy'
+set fillchars+=stl:\ ,stlnc:\
+set encoding=utf-8
 
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
