@@ -1,11 +1,46 @@
 " This is Gary Bernhardt's .vimrc file
 " vim:set ts=2 sts=2 sw=2 expandtab:
 
-call pathogen#runtime_append_all_bundles()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Pakethanterare
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"call pathogen#runtime_append_all_bundles()
 
-"anders
-set number
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+"Bundle 'croaky/vim-colors-github'
+"Bundle 'kien/ctrlp.vim'
+"Bundle 'nanki/treetop.vim'
+"Bundle 'timcharper/textile.vim'
+Bundle 'tpope/vim-cucumber'
+"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-markdown'
+"Bundle 'vim-scripts/greplace.vim'
+Bundle 'tpope/vim-haml'
+Bundle 'surround.vim'
+Bundle 'vim-scripts/ctags.vim'
+Bundle 'xenoterracide/html.vim'
+Bundle 'endwise.vim'
+"Bundle 'vim-scripts/tComment'
+Bundle 'The-NERD-Commenter'
+Bundle 'Command-T'
+"Bundle 'kchmck/vim-coffee-script'
+Bundle 'Powerline'
+Bundle 'ruby-matchit'
+
+"Nya
+"trailing whitespace
+
+"Problem:
+Bundle 'vim-coffee-script'
+
+"Behöver ej:
+"Bundle 'tpope/vim-rails'
+"Bundle 'snipMate'
+"Bundle 'scratch'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -14,6 +49,7 @@ set nocompatible
 set hidden
 " remember more commands and search history
 set history=10000
+set noswapfile
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -29,6 +65,7 @@ set ignorecase smartcase
 set cursorline
 set cmdheight=2
 set switchbuf=useopen
+set number
 set numberwidth=5
 set showtabline=2
 set winwidth=79
@@ -60,6 +97,15 @@ set wildmode=longest,list
 set wildmenu
 let mapleader=","
 
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+" configure syntastic syntax checking to check on open as well as save
+let g:syntastic_check_on_open=1
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -79,8 +125,8 @@ augroup vimrcEx
 
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
-  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
-  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
+  autocmd BufRead *.mkd      set ai formatoptions=tcroqn2 comments=n:&gt;
+  autocmd BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:&gt;
 
   " Indent p tags
   autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
@@ -92,7 +138,13 @@ augroup vimrcEx
   " to run commands there.
   autocmd! CmdwinEnter * :unmap <cr>
   autocmd! CmdwinLeave * :call MapCR()
+
+  " No EOL //anders
+  " au BufNewFile * set noeol
 augroup END
+
+"set binary noeol
+"set noeol
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
@@ -106,7 +158,8 @@ augroup END
 if has("gui_running")
   "set background=light
   "color paper/mayansmoke
-  color paper/solarized "vy
+  "color paper/solarized
+  "vy
   "color paper/newspaper
   "color white/tomorrow
   "color white/summerfruit
@@ -132,13 +185,21 @@ else
 end
 
 if has("win32")
-  set gfn=DejaVu_Sans_Mono_for_Powerline:h16:cANSI
+  set gfn=Bitstream_Sans_Mono_for_Powerline:h16:cANSI
   au GUIEnter * simalt ~x
 elseif has("mac")
-  set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h16
+  set gfn=Meslo\ LG\ S\ DZ\ for\ Powerline:h16
+  "set gfn=Ubuntu\ Mono\ derivative\ Powerline:h19
+  "set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h16
+  "set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h16
 elseif has("unix")
-  color white/github
-  set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 16
+  color paper/solarized
+  "color white/github
+  "highlight NonText guibg=#060606
+  "highlight Folded  guibg=#0A0A0A guifg=#9090D0
+  set gfn=Meslo\ LG\ M\ for\ Powerline\ 15
+  "set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline\ 15
+  "set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 15
   "set gfn=M+\ 1m\ 16
   "set gfn=Menlo\ for\ Powerline\ 13
   "set gfn=Inconsolata-dz\ for\ Powerline\ 13
@@ -194,10 +255,16 @@ inoremap <s-tab> <c-n>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+"map <Left> <Nop>
+"map <Right> <Nop>
+"map <Up> <Nop>
+"map <Down> <Nop>
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " OPEN FILES IN DIRECTORY OF CURRENT FILE
@@ -440,6 +507,11 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+"set grepprg=ack
+set grepprg=ag
+"let g:ackprg = 'ag --nogroup --nocolor --column'
+"använd ag.vim istället
 
 "set rtp+=~/.vam/vim-addon-manager
 "call vam#ActivateAddons(["FuzzyFinder"])

@@ -212,7 +212,7 @@ SScratch Nytt dok i ny flik som inte sparas
 :vimgrep /extend/ app/model/*.rb
 :vimgrep /extend/ **/*.rb
 
-# Fuzzyfinder
+# Command-T
 ,f    /
 ,F    .
 ,gm   /models/
@@ -235,12 +235,16 @@ SScratch Nytt dok i ny flik som inte sparas
 ,,    växla sista fil
 :e %% aktuell sokväg
 
-# Switch colorscheme
+# ctags   (tab-complete)
+:tag
+:ta
+
+# setcolors (bläddra bland färgscheman)
 :SetColors all
 F8          Föregående
 shift+F8    Nästa
 
-# Bra plugin
+# andra plugin
 Snipmate  doctype+TAB  infogar komplett doctype-kod!
 MRU       :MRU         öppnar från de 10 senaste dokumenten
 Matchit   %            växlar mellan def end och { }
