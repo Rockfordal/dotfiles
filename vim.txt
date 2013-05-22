@@ -7,6 +7,7 @@ b    bak ett ord
 6l   fram 6 letters
 2j   ner en rad
 
+gi   gå till sista insert
 gg   början av dokumentet
 G    slutet av dokumentet
 0    början av raden oavsett whitespace
@@ -52,7 +53,7 @@ gJ   joina utan mellanrum
 ,n   spara som ny fil
 
 #
-vit  markera inom tag 
+vit  markera inom tag
 vat  markera inom tag inklusive whitespace
 
 # Indrag
@@ -177,15 +178,24 @@ ctrl+g  var är jag?
 
 # Coolt
 vwc      visuellt markera och infoga över ett ord
-gf       hoppar till fil - funkar med require 'abc' och partials
-
-
-### plugin ###
+ci'      change inside ''
+da"      delete around ""
+daw      delete around word
+ctrl+o   hoppa bak
+ctrl+i   hoppa fram
 
 # Rails
-:A    växla till/från test
-:Rake :Rcontroller :Rmodel :Rview
-:help rails-navigation
+:A            hittar test
+:1R orgunit   hittar fil
+:R            db schema
+:Rake
+:Rlocale :Renvironmenta :Rstylesheet :Rlayout
+:RVunittest   öppnar i v split
+:RSunittest   öppnar i h split
+:RTunittest   öppnar i ny tab
+:Rgenerate    rails generate
+:help         rails-navigation
+gf            hittar fil/partial/action(från vy) som matchar nuvarande ord
 
 # Surround
 V: cs"'
@@ -193,12 +203,14 @@ V: cs'"
 V: ysiw"      sätt "" omkring
 I: ctrl+s<p>  skapar hel tag
 
-# NERD Commenter
-,c<space>  Toggle
-,cc        Ny
-
 # Endwise
 fixar end automatiskt
+
+# Tcomment
+gcc     toggle rad
+gc5     denna +5 rader
+gcl     kommentera vid cursor
+gcb     kommentera före blocket cursorn står vid
 
 # Scratch
 Scratch  Nytt dok som inte sparas
@@ -226,7 +238,7 @@ SScratch Nytt dok i ny flik som inte sparas
 ,gr   Rakefile
 ,gR   rake routes => ny
 
-#Gary Benhardt
+#Gary Bernhardt
 ,t    kör sista test
 ,T    kör närmaste test
 ,a    kör alla test
@@ -244,7 +256,12 @@ SScratch Nytt dok i ny flik som inte sparas
 F8          Föregående
 shift+F8    Nästa
 
+#Snipmate
+def+TAB           def method_name
+doctype+TAB       doctype!
+a.sel+TAB         a.select { |e|,  }
+
 # andra plugin
-Snipmate  doctype+TAB  infogar komplett doctype-kod!
 MRU       :MRU         öppnar från de 10 senaste dokumenten
 Matchit   %            växlar mellan def end och { }
+

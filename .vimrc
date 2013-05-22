@@ -1,50 +1,12 @@
-" This is Gary Bernhardt's .vimrc file
-" vim:set ts=2 sts=2 sw=2 expandtab:
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pakethanterare
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"call pathogen#runtime_append_all_bundles()
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-"Bundle 'croaky/vim-colors-github'
-"Bundle 'kien/ctrlp.vim'
-"Bundle 'nanki/treetop.vim'
-"Bundle 'timcharper/textile.vim'
-Bundle 'tpope/vim-cucumber'
-"Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-markdown'
-"Bundle 'vim-scripts/greplace.vim'
-Bundle 'tpope/vim-haml'
-Bundle 'surround.vim'
-Bundle 'vim-scripts/ctags.vim'
-Bundle 'xenoterracide/html.vim'
-Bundle 'endwise.vim'
-"Bundle 'vim-scripts/tComment'
-Bundle 'The-NERD-Commenter'
-Bundle 'Command-T'
-"Bundle 'kchmck/vim-coffee-script'
-Bundle 'Powerline'
-Bundle 'ruby-matchit'
-
-"Nya
-"trailing whitespace
-
-"Problem:
-Bundle 'vim-coffee-script'
-
-"Behöver ej:
-"Bundle 'tpope/vim-rails'
-"Bundle 'snipMate'
-"Bundle 'scratch'
+" Use local bundles if available {
+if filereadable(expand("~/.vimrc.bundles"))
+  source ~/.vimrc.bundles
+endif
+" }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible
 " allow unsaved background buffers and remember marks/undo for them
 set hidden
 " remember more commands and search history
@@ -84,19 +46,12 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backspace=indent,eol,start
 " display incomplete commands
 set showcmd
-" Enable highlighting for syntax
 syntax on
-" Enable file type detection.
-" Use the default filetype settings, so that mail gets 'tw' set to 72,
-" 'cindent' is on in C files, etc.
-" Also load indent files, to automatically do language-dependent indenting.
-filetype plugin indent on
 " use emacs-style tab completion when selecting files, etc
 set wildmode=longest,list
 " make tab completion for files/buffers act like bash
 set wildmenu
 let mapleader=","
-
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
@@ -139,79 +94,16 @@ augroup vimrcEx
   autocmd! CmdwinEnter * :unmap <cr>
   autocmd! CmdwinLeave * :call MapCR()
 
-  " No EOL //anders
-  " au BufNewFile * set noeol
 augroup END
-
-"set binary noeol
-"set noeol
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
   set antialias
   set t_Co=256
-  let g:solarized_contrast="high"
-  let g:solarized_visibility="high"
+  set lines=30
+  set columns=85
 
-if has("gui_running")
-  "set background=light
-  "color paper/mayansmoke
-  "color paper/solarized
-  "vy
-  "color paper/newspaper
-  "color white/tomorrow
-  "color white/summerfruit
-  "color white/summerfruit256
-  "color white/fluidvision
-  "color white/reliable
-  "color paper/peachpuff
-  "set background=dark
-  "color brown/vilight "js sass
-  "color brown/twilight "html
-  "color railscasts "controller
-  "color grey/xoria256
-  "color red/tetragrammaton
-  "color black/synic
-else
-  "set background=dark
-  let g:solarized_termcolors=256
-  "let g:solarized_termtrans=1
-  "color paper/solarized "vy
-  "color black/grb256
-  color brown/hybrid
-  "color codeschool
-end
-
-if has("win32")
-  set gfn=Bitstream_Sans_Mono_for_Powerline:h16:cANSI
-  au GUIEnter * simalt ~x
-elseif has("mac")
-  set gfn=Meslo\ LG\ S\ DZ\ for\ Powerline:h16
-  "set gfn=Ubuntu\ Mono\ derivative\ Powerline:h19
-  "set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h16
-  "set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h16
-elseif has("unix")
-  color paper/solarized
-  "color white/github
-  "highlight NonText guibg=#060606
-  "highlight Folded  guibg=#0A0A0A guifg=#9090D0
-  set gfn=Meslo\ LG\ M\ for\ Powerline\ 15
-  "set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline\ 15
-  "set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 15
-  "set gfn=M+\ 1m\ 16
-  "set gfn=Menlo\ for\ Powerline\ 13
-  "set gfn=Inconsolata-dz\ for\ Powerline\ 13
-  "set gfn=Monospace\ 13
-  "set gfn=Envy\ Code\ R\ 13
-endif
-
-let Powerline_symbols = 'fancy'
-set fillchars+=stl:\ ,stlnc:\
-set encoding=utf-8
-
-"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -221,15 +113,19 @@ set encoding=utf-8
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>y "*y
+
 " Move around splits with <c-hjkl>
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=><space>
+
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
+
 " Clear the search buffer when hitting return
 function! MapCR()
   nnoremap <cr> :nohlsearch<cr>
@@ -255,12 +151,6 @@ inoremap <s-tab> <c-n>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"map <Left> <Nop>
-"map <Right> <Nop>
-"map <Up> <Nop>
-"map <Down> <Nop>
-
-" Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
@@ -272,6 +162,8 @@ nnoremap <Down> :echoe "Use j"<CR>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
 map <leader>v :view %%
+map <leader>s :split %%
+map <leader>s :vnew %%
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RENAME CURRENT FILE
@@ -493,14 +385,13 @@ function! OpenChangedFiles()
 endfunction
 command! OpenChangedFiles :call OpenChangedFiles()
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " InsertTime COMMAND
 " Insert the current time
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
-
-"" Anders: highlight whitespace:
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
@@ -508,10 +399,19 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-"set grepprg=ack
-set grepprg=ag
-"let g:ackprg = 'ag --nogroup --nocolor --column'
-"använd ag.vim istället
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"" Anders
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
+"använd ag.vim
 
 "set rtp+=~/.vam/vim-addon-manager
 "call vam#ActivateAddons(["FuzzyFinder"])
+
+" Use local vimrc if available {
+    if filereadable(expand("~/.vimrc.local"))
+        source ~/.vimrc.local
+    endif
+" }
