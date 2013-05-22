@@ -272,6 +272,12 @@ def+TAB           def method_name
 doctype+TAB       doctype!
 a.sel+TAB         a.select { |e|,  }
 
+# Silver Searcher
+:Ag <sökord>
+sedan v för split
+o
+
+
 # andra plugin
 MRU       :MRU         öppnar från de 10 senaste dokumenten
 Matchit   %            växlar mellan def end och { }
