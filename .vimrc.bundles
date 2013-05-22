@@ -9,6 +9,7 @@ Bundle 'gmarik/vundle'
 Bundle 'CSApprox'
 Bundle 'Powerline'
 Bundle 'snipMate'
+Bundle 'vim-slim'
 
 "thoughtbot
 Bundle 'croaky/vim-colors-github'

@@ -8,26 +8,24 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 
 if has("gui_running")
-      let g:solarized_termcolors=256
-      "set transparency=0
-      set guioptions=aAc
-      "egmrL
-      "
-    highlight clear SignColumn      " SignColumn should match background for
-                                    " things like vim-gitgutter
+  let g:solarized_termcolors=256
+  "set transparency=0
+  set guioptions=aAc
+  "egmrL
+  "
+  highlight clear SignColumn " match SignColumn with bg for vim-gitgutter..
 
-    let $pd = getcwd()
-    if $pd == '/Users/anders/rails/urdb19'
-      color white/espresso-soda
-    elseif $pd == '/home/rails/swedmak'
-      set background=dark
-      color solarized
-    endif
+  let $pd = getcwd()
+  if $pd == '/Users/anders/rails/urdb19'
+    " color white/espresso-soda
+    color github
+    " highlight NonText guibg=#060606
+    " highlight Folded  guibg=#0A0A0A guifg=#9090D0
+    " color solarized
+  elseif $pd == '/home/rails/swedmak'
+    color solarized
+  endif
 
-  "set background=light
-  "color white/github
-  "highlight NonText guibg=#060606
-  "highlight Folded  guibg=#0A0A0A guifg=#9090D0
   "color paper/mayansmoke
   "color white/summerfruit
   "color white/summerfruit256
@@ -58,19 +56,19 @@ if has("win32")
 
 elseif has("mac")
   set gfn=Meslo\ LG\ S\ DZ\ for\ Powerline:h16
-  set gfn=Ubuntu\ Mono\ derivative\ Powerline:h19
-  set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h16
-  set gfn=Terminus\ For\ Powerline:h19
-  set gfn=Anonymous\ Pro\ for\ Powerline:h19
-  set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h16
-  set gfn=Inconsolata:h16
-  set gfn=Menlo:h14"
-  set gfn=M+\ 1m:h16
-  set gfn=Source\ Code\ Pro:h13
-  set gfn=Inconsolata-dz\ for\ Powerline\ 13
-  set gfn=Menlo\ for\ Powerline\ 13
-  set gfn=Monospace\ 13
-  set gfn=Envy\ Code\ R\ 13
+  " set gfn=Ubuntu\ Mono\ derivative\ Powerline:h19
+  " set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h16
+  " set gfn=Terminus\ For\ Powerline:h19
+  " set gfn=Anonymous\ Pro\ for\ Powerline:h19
+  " set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h16
+  " set gfn=Inconsolata:h16
+  " set gfn=Menlo:h14"
+  " set gfn=M+\ 1m:h16
+  " set gfn=Source\ Code\ Pro:h13
+  " set gfn=Inconsolata-dz\ for\ Powerline\ 13
+  " set gfn=Menlo\ for\ Powerline\ 13
+  " set gfn=Monospace\ 13
+  " set gfn=Envy\ Code\ R\ 13
 elseif has("unix")
   set gfn=Meslo\ LG\ M\ DZ\ for\ Powerline\ 15
   "set gfn=Meslo\ LG\ M\ for\ Powerline\ 15
@@ -91,6 +89,12 @@ set encoding=utf-8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Thoughtbot
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Softtabs, 2 spaces
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
 
 " öppna filer
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
