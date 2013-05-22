@@ -1,0 +1,45 @@
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+"funkar
+"NeoBundle 'stephenmckinney/vim-solarized-powerline'
+Bundle 'gmarik/vundle'
+Bundle 'CSApprox'
+Bundle 'Powerline'
+Bundle 'snipMate'
+
+"thoughtbot
+Bundle 'croaky/vim-colors-github'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'vim-scripts/tComment'
+Bundle 'kchmck/vim-coffee-script'
+" Bundle 'danro/rename.vim'
+" Bundle 'nanki/treetop.vim'
+" Bundle 'scrooloose/syntastic'
+" Bundle 'thoughtbot/vim-rspec'
+" Bundle 'timcharper/textile.vim'
+" Bundle 'tpope/vim-bundler'
+" Bundle 'tpope/vim-cucumber'
+" Bundle 'tpope/vim-fugitive'
+" Bundle 'tpope/vim-haml'
+" Bundle 'tpope/vim-markdown'
+" Bundle 'tsaleh/vim-matchit'
+" Bundle 'vim-scripts/ctags.vim'
+" Bundle 'vim-scripts/greplace.vim'
+" Bundle 'xenoterracide/html.vim'
+
+"rem:
+"Bundle 'vim-scripts/greplace.vim'
+
+"nya:
+"trailing whitespace
+
+"Behöver ej:
+"Bundle 'scratch'
+"Bundle 'Command-T'
+filetype plugin indent on
