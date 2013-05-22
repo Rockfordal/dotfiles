@@ -224,7 +224,18 @@ SScratch Nytt dok i ny flik som inte sparas
 :vimgrep /extend/ app/model/*.rb
 :vimgrep /extend/ **/*.rb
 
+<<<<<<< HEAD
 # Command-T
+=======
+#Test
+,r    kör ruby (ruby runner) /ej gary
+,t    kör sista test
+,T    kör närmaste test
+,a    kör alla test
+,c    kör features
+,w    kör wip features
+,,    växla sista fil
+>>>>>>> 374d19bbe471d19b4d1b5c6e97b4b37b50892394
 ,f    /
 ,F    .
 ,gm   /models/

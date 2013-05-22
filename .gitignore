@@ -26,3 +26,4 @@ pickle-email-*.html
 .AppleDouble
 /config/environments/*
 coverage
+.vim/.netrwhist

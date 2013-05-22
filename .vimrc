@@ -103,7 +103,62 @@ augroup END
   set t_Co=256
   set lines=30
   set columns=85
+  let g:solarized_contrast="high"
+  let g:solarized_visibility="high"
 
+if has("gui_running")
+	let $pd = getcwd()
+	if $pd == '/Users/anders/rails/urdb19'
+      color white/espresso-soda
+      "color paper/solarized
+      "color railscasts
+      "color white/fluidvision
+      "color white/tomorrow
+      "color paper/peachpuff
+      "color paper/mayansmoke
+      "color white/reliable
+      "color white/summerfruit
+      "color brown/vilight
+      "color brown/twilight
+      "color grey/xoria256
+      "color red/tetragrammaton
+      "color black/synick
+    elseif $pd == '/Users/anders/rails/angular'
+      color white/github
+    else
+      color paper/newspaper
+    endif
+
+  set transparency=0
+  set guioptions=aAc
+  "egmrL
+else
+  let g:solarized_termcolors=256
+  "let g:solarized_termtrans=1
+  "color codeschool
+  "color grey/LastNight
+  color grey/hybrid
+end
+
+set gfn=Meslo\ LG\ S\ DZ\ for\ Powerline:h16
+"set gfn=Ubuntu\ Mono\ derivative\ Powerline:h19
+"set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h16
+"set gfn=Terminus\ For\ Powerline:h19
+"set gfn=Anonymous\ Pro\ for\ Powerline:h19
+"set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h16
+"set gfn=Inconsolata:h16
+"set gfn=Menlo:h14"
+"set gfn=M+\ 1m:h16
+"set gfn=Source\ Code\ Pro:h13
+"set gfn=Inconsolata-dz\ for\ Powerline\ 13
+"set gfn=Menlo\ for\ Powerline\ 13
+"set gfn=Monospace\ 13
+"set gfn=Envy\ Code\ R\ 13
+let Powerline_symbols='fancy'
+set fillchars+=stl:\ ,stlnc:\
+set encoding=utf-8
+
+"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -368,7 +423,6 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-
 
 " Use local vimrc if available {
     if filereadable(expand("~/.vimrc.local"))
