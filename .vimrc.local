@@ -18,12 +18,14 @@ if has("gui_running")
   let $pd = getcwd()
   if $pd == '/Users/anders/rails/urdb19'
     " color white/espresso-soda
-    color github
+    " color github
     " highlight NonText guibg=#060606
     " highlight Folded  guibg=#0A0A0A guifg=#9090D0
-    " color solarized
+    color solarized
   elseif $pd == '/home/rails/swedmak'
     color solarized
+  else
+    color brown/vilight
   endif
 
   "color paper/mayansmoke
