@@ -1,8 +1,7 @@
-" Use local bundles if available {
+" Use local bundles if available
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
-" }
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
@@ -75,13 +74,10 @@ augroup vimrcEx
     \ endif
 
   "for ruby, autoindent with two spaces, always expand tabs
-  autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
-  autocmd FileType python set sw=4 sts=4 et
-
-  autocmd! BufRead,BufNewFile *.sass setfiletype sass
-
-  autocmd BufRead *.mkd      set ai formatoptions=tcroqn2 comments=n:&gt;
-  autocmd BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:&gt;
+  " autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
+  " autocmd FileType python set sw=4 sts=4 et
+  " autocmd BufRead *.mkd      set ai formatoptions=tcroqn2 comments=n:&gt;
+  " autocmd BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:&gt;
 
   " Indent p tags
   autocmd FileType html,eruby if g:html_indent_tags !~ '\\|p\>' | let g:html_indent_tags .= '\|p\|li\|dt\|dd' | endif
@@ -95,14 +91,6 @@ augroup vimrcEx
   autocmd! CmdwinLeave * :call MapCR()
 
 augroup END
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" COLOR
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-  set antialias
-  set t_Co=256
-  set lines=30
-  set columns=85
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
@@ -369,8 +357,7 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-" Use local vimrc if available {
-    if filereadable(expand("~/.vimrc.local"))
-        source ~/.vimrc.local
-    endif
-" }
+" Use local vimrc if available
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif

@@ -2,6 +2,11 @@
 " Färger
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set antialias
+set t_Co=256
+set lines=30
+set columns=85
+
 " termtrans if ..
 let g:solarized_termtrans=1
 let g:solarized_contrast="high"
