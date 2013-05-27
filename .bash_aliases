@@ -76,8 +76,7 @@ alias precomp="txt/precomp.sh"
 alias indexera="u && txt/indexera.sh"
 alias urbakprod='/home/rails/urdb19/txt/urbakprod.sh'
 alias urbakdev='/home/rails/urdb19/txt/urbakdev.sh'
-alias bestu='u && rails_best_practices -f html --output-file /home/rails/urdb19/public/assets/best.html -x old.,/db/,/config/,/tasks/'
-alias bests='s && rails_best_practices -f html --output-file /home/rails/swedmak/public/assets/best.html -x old.,/db/,/config/,/tasks/'
+alias best='rails_best_practices -f html --output-file /home/rails/urdb19/public/assets/best.html -x old.,/db,/config,/tasks,/log,/txt'
 alias brake='brakeman --skip-files app/views/layouts/appnocache.html.erb -f html -o public/assets/brake.html'
 alias rspec="rspec --color"
 alias spek="rspec -f h > public/assets/spec.html"
@@ -91,6 +90,7 @@ alias apg="apg -c /dev/urandom"
 alias kaffe="coffee -c -o ../../../public/assets/"
 alias ip="ifconfig en0 |grep inet|grep -v inet6|cut -f2 -d' '"
 alias p="psql -U andersl -W -h 127.0.0.1 angular"
+alias tmuxt="tmux a -t"
 
 # tjänster
 alias mem="tmux attach -t mem || tmux new -s mem 'memcached -v -m 32 -t 4'"

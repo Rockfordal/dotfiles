@@ -1,14 +1,15 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Färger
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set antialias
 
 let g:solarized_termtrans=1
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 let g:Powerline_theme='long'
+let $pd = getcwd()
 
 if has("gui_running")
+  set antialias
   highlight clear SignColumn " match SignColumn with bg for vim-gitgutter..
   let g:solarized_termcolors=256
   let g:Powerline_colorscheme='solarized256_dark'
@@ -30,7 +31,6 @@ if has("gui_running")
   " Don't flick cursor.
   set guicursor=a:blinkon0
 
-  let $pd = getcwd()
   if $pd == '/Users/anders/rails/urdb19'
     color solarized
   elseif $pd == '/home/rails/urdb19'
@@ -42,8 +42,10 @@ if has("gui_running")
     color github256
     highlight NonText guibg=#060606
     highlight Folded  guibg=#0A0A0A guifg=#9090D0
-    " color solarized
-    " color brown/hybrid
+  elseif $pd == '/home/rails/test-driven-rails-app1/todos'
+    color solarized
+    set lines=30
+    set columns=85
   else
     color brown/vilight
   endif
@@ -66,17 +68,23 @@ if has("gui_running")
   "color red/tetragrammaton
   "color black/synic
 else
-  set t_Co=256
-  set lines=25
-  set columns=90
-  let g:solarized_termcolors=256
-  let g:Powerline_colorscheme='solarized256_light'
-  " set background=light
-  color github256
-  "color brown/hybrid
-  "color black/grb256
-  "color codeschool
-end
+  if $pd == '/home/rails/test-driven-rails-app1/todos'
+    let g:Powerline_colorscheme='solarized256_dark'
+    let g:solarized_termcolors=256
+    color solarized
+    set lines=33
+  else
+    let g:solarized_termcolors=16
+    set t_Co=256
+    set lines=25
+    set columns=90
+    let g:Powerline_colorscheme='solarized256_light'
+    color github256
+    "color brown/hybrid
+    "color codeschool
+    "color black/grb256
+  endif
+endif
 
 if has("win32")
   set gfn=Bitstream_Sans_Mono_for_Powerline:h16:cANSI
