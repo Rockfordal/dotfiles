@@ -104,8 +104,8 @@ ctrl+w T    flytta fönster till ny tab
 ctrl+w O    stäng alla andra fönster
 
 # Buffers
+:bd               stäng allt
 :ls               listar buffers
-:bd               radera buffer
 :b3               gå till buffer 3
 :bn               nästa buffer
 :bp               förra buffer
