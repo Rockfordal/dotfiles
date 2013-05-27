@@ -1,0 +1,100 @@
+[user]
+	email = anders@urkraft.se
+	name = Anders Lundström
+[color]
+	ui = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[alias]
+	#gary bernhardt:
+	st = status
+	ci = commit
+	co = checkout
+	di = diff
+	dc = diff --cached
+	amend = commit --amend
+	aa = add --all
+	ff = merge --ff-only
+	pullff = pull --ff-only
+	noff = merge --no-ff
+	fa = fetch --all
+	pom = push origin master
+	b = branch
+	dh1 = diff HEAD~1
+	dif = divergence
+	gn = goodness
+	gnc = goodness --cached
+	head = !git l -1
+	h = !git head
+	hp = "!source ~/.githelpers && show_git_head"
+	r = !git l -30
+	ra = !git r --all
+	l = "!source ~/.githelpers && pretty_git_log"
+	la = !git l --all
+
+	#anlu:
+	di = diff --stat
+	dis = diff --staged
+	rbc = rebase --continue
+	new = log master.. --reverse
+
+	#hashrocket:
+	br = branch
+	cp = cherry-pick
+	put = push origin HEAD
+	fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+	squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+	ri = rebase --interactive
+	pruneremote = remote prune origin
+	ln = log --pretty=format:'%Cblue%h %Cred* %C(yellow)%s'
+	tree = log --graph --oneline --decorate --color --all
+	tr = log --graph --oneline --decorate --color
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	unpushed = !"PROJ_BRANCH=$(git symbolic-ref HEAD | sed 's|refs/heads/||') && git log origin/$PROJ_BRANCH..HEAD"
+	unpulled = !"PROJ_BRANCH=$(git symbolic-ref HEAD | sed 's|refs/heads/||') && git fetch && git log HEAD..origin/$PROJ_BRANCH"
+	add-untracked = !"git status --porcelain | awk '/\\?\\?/{ print $2 }' | xargs git add"
+	reset-authors = commit --amend --reset-author -CHEAD
+[branch]
+	autosetuprebase = always
+[core]
+	excludesfile = /home/andersl/.gitignore
+	;editor = subl -n -w
+    editor = vim
+	whitespace = warn
+	autocrlf = input
+	#autocrlf = input # false
+    	#safecrlf = true
+#[github]
+#	user = rockfordal
+[help]
+	autocorrect = 10
+[interactive]
+	singlekey = true
+[merge]
+	tool = diffmerge
+	summary = true
+[merge "bundlelock"]
+	name = lock Gemfile
+	driver = bundle install
+[merge "bundle"]
+	name = bundle
+	driver = bundle
+[merge "railsschema"]
+	name = newer Rails schema version
+	driver = "ruby -e '\n\
+		system %(git), %(merge-file), %(--marker-size=%L), %(%A), %(%O), %(%B)\n\
+		b = File.read(%(%A))\n\
+		b.sub!(/^<+ .*\\nActiveRecord::Schema\\.define.:version => (\\d+). do\\n=+\\nActiveRecord::Schema\\.define.:version => (\\d+). do\\n>+ .*/) do\n\
+		  %(ActiveRecord::Schema.define(:version => #{[$1, $2].max}) do)\n\
+		end\n\
+		File.open(%(%A), %(w)) {|f| f.write(b)}\n\
+		exit 1 if b.include?(%(<)*%L)'"
+[push]
+	default = tracking
+[rebase]
+	autosquash = true
+[diff]
+	renames = copies
+# [credential]
+#	helper = osxkeychain
