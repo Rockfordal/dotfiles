@@ -90,7 +90,9 @@ alias apg="apg -c /dev/urandom"
 alias kaffe="coffee -c -o ../../../public/assets/"
 alias ip="ifconfig en0 |grep inet|grep -v inet6|cut -f2 -d' '"
 alias p="psql -U andersl -W -h 127.0.0.1 angular"
-alias tmuxt="tmux a -t"
+alias tmuxa="tmux a -t"
+alias zspec="zeus rspec"
+alias z="clear && zspec spec"
 
 # tjänster
 alias mem="tmux attach -t mem || tmux new -s mem 'memcached -v -m 32 -t 4'"
