@@ -12,14 +12,14 @@ Bundle 'slim-template/vim-slim'
 Bundle 'snipMate'
 
 " Thoughtbot
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-git'
+Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/tComment'
 Bundle 'vim-scripts/ctags.vim'
 Bundle 'tsaleh/vim-matchit'
@@ -36,10 +36,16 @@ Bundle 'vim-scripts/greplace.vim'
 Bundle 'timcharper/textile.vim'
 
 Bundle 'trailing-whitespace'
+Bundle 'gitv'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'ecomba/vim-ruby-refactoring'
 
 " Kör saker
 Bundle 'tpope/vim-dispatch'
 " Bundle 'Conque-Shell'
+
+" funkar ej
+Bundle 'rstacruz/sparkup.git'
 
 " Bundle 'css_color'
 " Bundle 'scratch'

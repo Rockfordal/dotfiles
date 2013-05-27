@@ -50,6 +50,14 @@ if has("gui_running")
     color brown/vilight
   endif
 
+  " Gitv
+  highlight diffAdded   guifg=#00bf00
+  " guibg=#9cf9b1
+  highlight diffRemoved guifg=#bf0000
+  " guibg=#ffa296
+
+
+  "color krunktastic
   "color paper/mayansmoke
   "color white/summerfruit
   "color white/summerfruit256
@@ -201,6 +209,58 @@ map <leader>gm :Rmodel
 map <leader>gc :Rcontroller
 map <leader>gv :Rview
 
+" Higlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
+" Corey Haines
+" kill trailing spaces when exiting file
+" autocmd BufWritePre * :%s/\s\+$//e
+
+" Highlight ruby operators
+let ruby_operators = 1
+
+Turn off rails bits of statusbar
+let g:rails_statusline=0
+
+" Paren Rainbow (diff colors for diff nestings)
+let g:clj_paren_rainbow = 1
+
+" Auto added used namespaces, generally be awesome
+let g:clj_dynamic_highlighting = 1
+
+
+" NERDCommenter
+let NERDDefaultNesting = 0
+let NERDRemoveExtraSpaces = 1
+let NERDSpaceDelims = 1
+
+" NERDTree CONFIGURATION
+
+" Enable nice colors
+let NERDChristmasTree = 1
+
+" Make it easy to see where we are
+let NERDTreeHighlightCursorline = 1
+
+" Make bookmarks visible
+let NERDTreeShowBookmarks = 1
+
+" Show hidden files
+let NERDTreeShowHidden = 1
+
+" Don't hijack NETRW
+let NERDTreeHijackNetrw = 0
+let NERDTreeIgnore=['\.$', '\~$']
+
+" Make F2 open NERDTree
+nmap <F2> :NERDTreeToggle<CR>
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-T
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -217,6 +277,9 @@ map <leader>gv :Rview
 " map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 " map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 " map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+
+" STATUS LINE (hanteras av powerline)
+" set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vet ej

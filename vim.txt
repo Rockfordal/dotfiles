@@ -279,6 +279,8 @@ a.sel+TAB         a.select { |e|,  }
 sedan v för split
 o
 
+# ruby refactor
+,rcpc     RconvertPostConditional (ifsats som 3 eller 1 rad)
 
 # andra plugin
 MRU       :MRU         öppnar från de 10 senaste dokumenten
