@@ -9,7 +9,10 @@ Bundle 'Solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'stephenmckinney/vim-solarized-powerline'
 Bundle 'slim-template/vim-slim'
-Bundle 'snipMate'
+Bundle 'trailing-whitespace'
+Bundle 'gitv'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'ecomba/vim-ruby-refactoring'
 
 " Thoughtbot
 Bundle 'tpope/vim-bundler'
@@ -35,17 +38,16 @@ Bundle 'xenoterracide/html.vim'
 Bundle 'vim-scripts/greplace.vim'
 Bundle 'timcharper/textile.vim'
 
-Bundle 'trailing-whitespace'
-Bundle 'gitv'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neosnippet.vim'
+" Bundle 'snipMate'
 
 " Kör saker
 Bundle 'tpope/vim-dispatch'
 " Bundle 'Conque-Shell'
 
 " funkar ej
-Bundle 'rstacruz/sparkup.git'
+" Bundle 'rstacruz/sparkup.git'
 
 " Bundle 'css_color'
 " Bundle 'scratch'
