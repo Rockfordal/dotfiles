@@ -102,6 +102,8 @@ ctrl+w R    rotera
 ctrl+w X    växla
 ctrl+w T    flytta fönster till ny tab
 ctrl+w O    stäng alla andra fönster
+ctrl+w +-   ändra bredd
+ctrl+w <>   ändra höjd
 
 # Buffers
 :bd               stäng allt
