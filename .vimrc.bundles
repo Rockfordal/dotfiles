@@ -5,10 +5,11 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'CSApprox'
-Bundle 'Powerline'
-Bundle 'snipMate'
-Bundle 'slim-template/vim-slim'
+Bundle 'Solarized'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'stephenmckinney/vim-solarized-powerline'
+Bundle 'slim-template/vim-slim'
+Bundle 'snipMate'
 
 " Thoughtbot
 Bundle 'kien/ctrlp.vim'
