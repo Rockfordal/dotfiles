@@ -3,44 +3,45 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-"funkar
-"NeoBundle 'stephenmckinney/vim-solarized-powerline'
 Bundle 'gmarik/vundle'
 Bundle 'CSApprox'
 Bundle 'Powerline'
 Bundle 'snipMate'
-Bundle 'vim-slim'
+Bundle 'slim-template/vim-slim'
+Bundle 'stephenmckinney/vim-solarized-powerline'
 
-"thoughtbot
-Bundle 'croaky/vim-colors-github'
+" Thoughtbot
 Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-git'
 Bundle 'vim-scripts/tComment'
-Bundle 'kchmck/vim-coffee-script'
-" Bundle 'danro/rename.vim'
-" Bundle 'nanki/treetop.vim'
-" Bundle 'scrooloose/syntastic'
-" Bundle 'thoughtbot/vim-rspec'
-" Bundle 'timcharper/textile.vim'
-" Bundle 'tpope/vim-bundler'
-" Bundle 'tpope/vim-cucumber'
-" Bundle 'tpope/vim-fugitive'
-" Bundle 'tpope/vim-haml'
-" Bundle 'tpope/vim-markdown'
-" Bundle 'tsaleh/vim-matchit'
-" Bundle 'vim-scripts/ctags.vim'
-" Bundle 'vim-scripts/greplace.vim'
-" Bundle 'xenoterracide/html.vim'
+Bundle 'vim-scripts/ctags.vim'
+Bundle 'tsaleh/vim-matchit'
+Bundle 'danro/rename.vim'
+Bundle 'vim-scripts/vim-coffee-script'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'scrooloose/syntastic'
 
-"rem:
-"Bundle 'vim-scripts/greplace.vim'
+Bundle 'nanki/treetop.vim'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'xenoterracide/html.vim'
+Bundle 'vim-scripts/greplace.vim'
+Bundle 'timcharper/textile.vim'
 
-"nya:
-"trailing whitespace
+Bundle 'trailing-whitespace'
 
-"Behöver ej:
-"Bundle 'scratch'
-"Bundle 'Command-T'
+" Kör saker
+Bundle 'tpope/vim-dispatch'
+" Bundle 'Conque-Shell'
+
+" Bundle 'css_color'
+" Bundle 'scratch'
+" Bundle 'Command-T'
+" Bundle 'croaky/vim-colors-github'
 filetype plugin indent on

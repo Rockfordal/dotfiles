@@ -1,34 +1,49 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Färger
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 set antialias
-set t_Co=256
-set lines=30
-set columns=85
 
-" termtrans if ..
 let g:solarized_termtrans=1
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
+let g:Powerline_theme='long'
 
 if has("gui_running")
-  let g:solarized_termcolors=256
-  "set transparency=0
-  set guioptions=aAc
-  "egmrL
-  "
   highlight clear SignColumn " match SignColumn with bg for vim-gitgutter..
+  let g:solarized_termcolors=256
+  let g:Powerline_colorscheme='solarized256_dark'
+  " set transparency=0
+
+  "Hide toolbar and menus.
+  set guioptions-=T
+  set guioptions-=m
+
+  " Scrollbar is always off.
+  set guioptions-=rL
+
+  " Enable gui tab labels
+  set guioptions+=e
+
+  " Disable bell.
+  set vb t_vb=
+
+  " Don't flick cursor.
+  set guicursor=a:blinkon0
 
   let $pd = getcwd()
   if $pd == '/Users/anders/rails/urdb19'
-    " color white/espresso-soda
-    " color github
-    " highlight NonText guibg=#060606
-    " highlight Folded  guibg=#0A0A0A guifg=#9090D0
     color solarized
+  elseif $pd == '/home/rails/urdb19'
+   " color white/espresso-soda
+    color github256
+    highlight NonText guibg=#060606
+    highlight Folded  guibg=#0A0A0A guifg=#9090D0
   elseif $pd == '/home/rails/swedmak'
-    color solarized
+    color github256
+    highlight NonText guibg=#060606
+    highlight Folded  guibg=#0A0A0A guifg=#9090D0
+    " color solarized
+    " color brown/hybrid
   else
     color brown/vilight
   endif
@@ -51,8 +66,14 @@ if has("gui_running")
   "color red/tetragrammaton
   "color black/synic
 else
-  "set background=dark
-  color brown/hybrid
+  set t_Co=256
+  set lines=25
+  set columns=90
+  let g:solarized_termcolors=256
+  let g:Powerline_colorscheme='solarized256_light'
+  " set background=light
+  color github256
+  "color brown/hybrid
   "color black/grb256
   "color codeschool
 end
@@ -77,7 +98,7 @@ elseif has("mac")
   " set gfn=Monospace\ 13
   " set gfn=Envy\ Code\ R\ 13
 elseif has("unix")
-  set gfn=Meslo\ LG\ M\ DZ\ for\ Powerline\ 15
+  set gfn=Meslo\ LG\ M\ DZ\ for\ Powerline\ 14
   "set gfn=Meslo\ LG\ M\ for\ Powerline\ 15
   "set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline\ 15
   "set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 15
@@ -116,22 +137,61 @@ nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 
 " Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+nnoremap <Up>    :echoe "Use k"<CR>
+nnoremap <Down>  :echoe "Use j"<CR>
+
+" ack sökning
+map <leader>f :Ack<Space>
 
 " Use Ag (https://github.com/ggreer/the_silver_searcher) instead of Grep
 if executable("ag")
   set grepprg=ag\ --nogroup\ --nocolor
 endif
 
+" Sök inte igenom onödiga filer
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.gz,*.min.js,*.log
+set wildignore+=/txt/*,public/*,/log/*,public/assets/*,app/assets/images/*
+let g:ctrlp_custom_ignore = {
+   \ 'dir':  '\v[\/]\.(git|hg|svn)$|public/*|txt/*|/assets/javascripts/tinymce/*|assets/javascripts/ui/*',
+   \ 'file': '\v\.(exe|so|dll|.gz|.log|min.js)$',
+   \ }
+
+" Snabba test
+let g:rspec_command = "Dispatch zeus rspec {spec}"
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vet ej
+" MAPS TO JUMP TO SPECIFIC TARGETS AND FILES
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set rtp+=~/.vam/vim-addon-manager
-"call vam#ActivateAddons(["FuzzyFinder"])
-" set foldmethod=syntax
+function! ShowRoutes()
+  " Requires 'scratch' plugin
+  :topleft 100 :split __Routes__
+  " Make sure Vim doesn't write __Routes__ as a file
+  :set buftype=nofile
+  " Delete everything
+  :normal 1GdG
+  " Put routes output in buffer
+  :0r! rake -s routes
+  " Size window to number of lines (1 plus rake output length)
+  :exec ":normal " . line("$") . "_ "
+  " Move cursor to bottom
+  :normal 1GG
+  " Delete empty trailing line
+  :normal dd
+endfunction
+
+map <leader>gr :topleft :split config/routes.rb<cr>
+map <leader>gR :call ShowRoutes()<cr>
+map <leader>gg :topleft 100 :split Gemfile<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Rails
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>gm :Rmodel
+map <leader>gc :Rcontroller
+map <leader>gv :Rview
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-T
@@ -149,3 +209,11 @@ endif
 " map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 " map <leader>f :CommandTFlush<cr>\|:CommandT<cr>
 " map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vet ej
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set rtp+=~/.vam/vim-addon-manager
+"call vam#ActivateAddons(["FuzzyFinder"])
+" set foldmethod=syntax
+
