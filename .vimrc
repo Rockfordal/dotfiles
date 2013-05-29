@@ -1,6 +1,6 @@
 " Use local bundles if available
-if filereadable(expand("~/.vimrc.bundles"))
-  source ~/.vimrc.bundles
+if filereadable(expand("~/dotfiles/anludot/.vimrc.bundles"))
+  source ~/dotfiles/anludot/.vimrc.bundles
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -322,7 +322,7 @@ command! OpenChangedFiles :call OpenChangedFiles()
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
 " Use local vimrc if available
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
+if filereadable(expand("~/dotfiles/anludot/.vimrc.local"))
+  source ~/dotfiles/anludot/.vimrc.local
 endif
 

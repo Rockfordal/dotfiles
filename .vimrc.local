@@ -224,8 +224,8 @@ autocmd BufWinLeave * call clearmatches()
 " Highlight ruby operators
 let ruby_operators = 1
 
-Turn off rails bits of statusbar
-"let g:rails_statusline = 0
+" Turn off rails bits of statusbar
+" let g:rails_statusline = 0
 
 " Paren Rainbow (diff colors for diff nestings)
 let g:clj_paren_rainbow = 1
