@@ -46,6 +46,9 @@ Bundle 'Shougo/neosnippet.vim'
 Bundle 'tpope/vim-dispatch'
 " Bundle 'Conque-Shell'
 
+" Glog tangenter: [q ]q [Q ]Q
+Bundle 'unimpaired.vim'
+
 " funkar ej
 " Bundle 'rstacruz/sparkup.git'
 

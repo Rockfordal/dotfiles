@@ -39,9 +39,7 @@ if has("gui_running")
     highlight NonText guibg=#060606
     highlight Folded  guibg=#0A0A0A guifg=#9090D0
   elseif $pd == '/home/rails/swedmak'
-    color github256
-    highlight NonText guibg=#060606
-    highlight Folded  guibg=#0A0A0A guifg=#9090D0
+    color white/pyte2
   elseif $pd == '/home/rails/test-driven-rails-app1/todos'
     color solarized
     set lines=30
@@ -51,11 +49,8 @@ if has("gui_running")
   endif
 
   " Gitv
-  highlight diffAdded   guifg=#00bf00
-  " guibg=#9cf9b1
-  highlight diffRemoved guifg=#bf0000
-  " guibg=#ffa296
-
+  highlight diffAdded   guifg=#00bf00 guibg=#9cf9b1
+  highlight diffRemoved guifg=#bf0000 guibg=#ffa296
 
   "color krunktastic
   "color paper/mayansmoke
@@ -281,13 +276,6 @@ nmap <F2> :NERDTreeToggle<CR>
 " STATUS LINE (hanteras av powerline)
 " set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vet ej
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set rtp+=~/.vam/vim-addon-manager
-"call vam#ActivateAddons(["FuzzyFinder"])
-" set foldmethod=syntax
-
 
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
@@ -375,4 +363,14 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+" rita inte om skärmen i onödan
+set lazyredraw
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vet ej
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"set rtp+=~/.vam/vim-addon-manager
+"call vam#ActivateAddons(["FuzzyFinder"])
+" set foldmethod=syntax
 

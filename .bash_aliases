@@ -14,6 +14,7 @@ alias c="clear"
 alias rvm1=". ~/.bashrc.local"
 alias storapaket="for i in $(qlist -CI | sort -u) ; do qsize -C $i ; done | awk '{print $6,$1}' | sort -nu"
 alias ctagindex="ctags -R --options=/pub/ctags.conf"
+# alias newlineall="for f in *.rb; do; ed -s <<< w $f; done"
 
 #if $SHELL="/bin/zsh"
  #alias reload="source ~/.bash_aliases"
