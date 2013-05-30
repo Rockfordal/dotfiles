@@ -1,10 +1,11 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Färger
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:solarized_termtrans=1
+" let g:solarized_termtrans=1
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
+let g:solarized_italic=0
 let g:Powerline_theme='long'
 let $pd = getcwd()
 
@@ -33,59 +34,63 @@ if has("gui_running")
 
   if $pd == '/Users/anders/rails/urdb19'
     color solarized
+    " color white/pyte
   elseif $pd == '/home/rails/urdb19'
-   " color white/espresso-soda
     color github256
     highlight NonText guibg=#060606
     highlight Folded  guibg=#0A0A0A guifg=#9090D0
   elseif $pd == '/home/rails/swedmak'
-    color white/pyte2
+    color solarized
   elseif $pd == '/home/rails/test-driven-rails-app1/todos'
     color solarized
     set lines=30
     set columns=85
   else
-    color brown/vilight
+    color white/pyte2
   endif
 
   " Gitv
   highlight diffAdded   guifg=#00bf00 guibg=#9cf9b1
   highlight diffRemoved guifg=#bf0000 guibg=#ffa296
 
-  "color krunktastic
-  "color paper/mayansmoke
-  "color white/summerfruit
-  "color white/summerfruit256
-  "vy
-  "color paper/newspaper
-  "color white/tomorrow
-  "color white/fluidvision
-  "color white/reliable
-  "color paper/peachpuff
+  " color paper/mayansmoke
+  " color white/espresso-soda
+  " color krunktastic
+  " color white/summerfruit
+  " color white/summerfruit256
+  " vy
+  " color paper/newspaper
+  " color white/tomorrow
+  " color white/fluidvision
+  " color white/reliable
+  " color paper/peachpuff
 
-  "set background=dark
-  "color brown/vilight   "js sass
-  "color brown/twilight  "html
-  "color railscasts      "ctrl
-  "color grey/xoria256
-  "color red/tetragrammaton
-  "color black/synic
+  " set background=dark
+  " color brown/vilight   "js sass
+  " color brown/twilight  "html
+  " color railscasts      "ctrl
+  " color grey/xoria256
+  " color red/tetragrammaton
+  " color black/synic
 else
   if $pd == '/home/rails/test-driven-rails-app1/todos'
     let g:Powerline_colorscheme='solarized256_dark'
     let g:solarized_termcolors=256
     color solarized
-    set lines=33
+    set lines=30
   else
-    let g:solarized_termcolors=16
+    " set lines=25
+    " set columns=90
     set t_Co=256
-    set lines=25
-    set columns=90
+    let g:solarized_termcolors= &t_Co
     let g:Powerline_colorscheme='solarized256_light'
-    color github256
-    "color brown/hybrid
-    "color codeschool
-    "color black/grb256
+    set background=light
+    color solarized
+    " color white/pyte2
+    " color github256
+    " color brown/hybrid
+    " color codeschool
+    " color black/grb256
   endif
 endif
 
@@ -94,10 +99,11 @@ if has("win32")
   au GUIEnter * simalt ~x
 
 elseif has("mac")
-  set gfn=Meslo\ LG\ S\ DZ\ for\ Powerline:h16
+  set gfn=Terminus\ For\ Powerline:h19
+  " set gfn=Neep:h15
+  " set gfn=Meslo\ LG\ S\ DZ\ for\ Powerline:h16
   " set gfn=Ubuntu\ Mono\ derivative\ Powerline:h19
   " set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h16
-  " set gfn=Terminus\ For\ Powerline:h19
   " set gfn=Anonymous\ Pro\ for\ Powerline:h19
   " set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h16
   " set gfn=Inconsolata:h16
@@ -109,16 +115,19 @@ elseif has("mac")
   " set gfn=Monospace\ 13
   " set gfn=Envy\ Code\ R\ 13
 elseif has("unix")
-  set gfn=Meslo\ LG\ M\ DZ\ for\ Powerline\ 14
-  "set gfn=Meslo\ LG\ M\ for\ Powerline\ 15
-  "set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline\ 15
-  "set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 15
-  "set gfn=M+\ 1m\ 16
-  "set gfn=Menlo\ for\ Powerline\ 13
-  "set gfn=Inconsolata-dz\ for\ Powerline\ 13
-  "set gfn=Monospace\ 13
-  "set gfn=Envy\ Code\ R\ 13
-  "set gfn=Andale\ Mono\ 16
+  set gfn=Neep\ 15
+  set gfn=Terminus\ For\ Powerline\ 14
+  " set gfn=Andale\ Mono\ 16
+  " set gfn=Meslo\ LG\ M\ DZ\ for\ Powerline\ 14
+  " set gfn=Ubuntu\ Mono\ Regular\ 16
+  " set gfn=Meslo\ LG\ M\ for\ Powerline\ 15
+  " set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline\ 15
+  " set gfn=DejaVu\ Sans\ Mono\ for\ Powerline\ 15
+  " set gfn=M+\ 1m\ 16
+  " set gfn=Menlo\ for\ Powerline\ 13
+  " set gfn=Inconsolata-dz\ for\ Powerline\ 13
+  " set gfn=Monospace\ 13
+  " set gfn=Envy\ Code\ R\ 13
 endif
 
 let Powerline_symbols = 'fancy'
@@ -200,9 +209,10 @@ map <leader>gg :topleft 100 :split Gemfile<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Rails
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>gm :Rmodel
-map <leader>gc :Rcontroller
-map <leader>gv :Rview
+map <leader>gm :Rmodel<CR>
+map <leader>gc :Rcontroller<CR>
+map <leader>gv :Rview<CR>
+map <leader>gs :Gstatus<CR>
 
 " Higlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -366,6 +376,9 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " rita inte om skärmen i onödan
 set lazyredraw
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vet ej

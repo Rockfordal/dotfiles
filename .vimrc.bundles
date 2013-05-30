@@ -5,7 +5,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'CSApprox'
-Bundle 'Solarized'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'stephenmckinney/vim-solarized-powerline'
 Bundle 'slim-template/vim-slim'
@@ -13,6 +12,7 @@ Bundle 'trailing-whitespace'
 Bundle 'gitv'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'ecomba/vim-ruby-refactoring'
+" Bundle 'Solarized'
 
 " Thoughtbot
 Bundle 'tpope/vim-bundler'

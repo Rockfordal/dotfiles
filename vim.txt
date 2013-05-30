@@ -185,6 +185,7 @@ da"      delete around ""
 daw      delete around word
 ctrl+o   hoppa bak
 ctrl+i   hoppa fram
+3+       gå till rad3 efter whitespace
 
 # Rails
 :A            hittar test
