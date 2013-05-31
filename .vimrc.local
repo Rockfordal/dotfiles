@@ -99,7 +99,7 @@ if has("win32")
   au GUIEnter * simalt ~x
 
 elseif has("mac")
-  set gfn=Terminus\ For\ Powerline:h19
+  set gfn=Terminus\ (ttf)\ For\ Powerline:h19
   " set gfn=Neep:h15
   " set gfn=Meslo\ LG\ S\ DZ\ for\ Powerline:h16
   " set gfn=Ubuntu\ Mono\ derivative\ Powerline:h19
