@@ -377,8 +377,14 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 " rita inte om skärmen i onödan
 set lazyredraw
 
-autocmd InsertEnter * :set number
-autocmd InsertLeave * :set relativenumber
+" Relative numbers
+if has('relativenumbers')
+  set relativenumber
+  autocmd InsertEnter * :set number
+  autocmd InsertLeave * :set relativenumber
+else
+  set number
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vet ej

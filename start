@@ -1,1 +1,5 @@
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+cd ~/
+ln -s dotfiles/anludot/.vimrc.local .
+ln -s dotfiles/anludot/.vimrc.bundles .
+

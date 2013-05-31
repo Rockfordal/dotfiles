@@ -4,7 +4,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'CSApprox'
+if has('gui')
+  Bundle 'CSApprox'
+endif
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'stephenmckinney/vim-solarized-powerline'
 Bundle 'slim-template/vim-slim'
