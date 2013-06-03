@@ -146,24 +146,12 @@ set expandtab
 
 " öppna filer
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
-map <leader>e :edit %%
-map <leader>v :view %%
-map <leader>h :vnew %%
-" map <leader>j :split %%
-
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
 
 " Get off my lawn
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
 nnoremap <Down>  :echoe "Use j"<CR>
-
-" ack sökning
-map <leader>f :Ack<Space>
 
 " Use Ag (https://github.com/ggreer/the_silver_searcher) instead of Grep
 if executable("ag")
@@ -202,17 +190,6 @@ function! ShowRoutes()
   :normal dd
 endfunction
 
-map <leader>gr :topleft :split config/routes.rb<cr>
-map <leader>gR :call ShowRoutes()<cr>
-map <leader>gg :topleft 100 :split Gemfile<cr>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Rails
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <leader>gm :Rmodel<CR>
-map <leader>gc :Rcontroller<CR>
-map <leader>gv :Rview<CR>
-map <leader>gs :Gstatus<CR>
 
 " Higlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -267,8 +244,43 @@ nmap <F2> :NERDTreeToggle<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Command-T
+" Leader
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Rails
+map <leader>gm :Rmodel<CR>
+map <leader>gc :Rcontroller<CR>
+map <leader>gv :Rview<CR>
+map <leader>gl :Gitv<CR>
+map <leader>gs :Gstatus<CR>
+map <leader>bb :Bundle<CR>
+" map <leader>bu :BundleUpdate<CR>
+
+" Rspec
+nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
+nnoremap <Leader>s :call RunNearestSpec()<CR>
+nnoremap <Leader>l :call RunLastSpec()<CR>
+
+" Filer
+" map <leader>gr :topleft :split config/routes.rb<cr>
+" map <leader>gg :topleft 100 :split Gemfile<cr>
+
+map <leader>gr :edit config/routes.rb<cr>
+map <leader>gR :call ShowRoutes()<cr>
+map <leader>gg :tabnew Gemfile<cr>
+map <leader>dd :edit config/database.yml<cr>
+map <leader>de :edit config/environments/development.rb<cr>
+map <leader>pe :edit config/environments/production.rb<cr>
+" map <leader>j :split %%
+
+" Öppna
+map <leader>e :edit %%
+map <leader>v :view %%
+map <leader>h :vnew %%
+
+" Sök
+map <leader>f :Ack<Space>
+
+" CommandT
 " map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
 " map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
 " map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
@@ -285,7 +297,6 @@ nmap <F2> :NERDTreeToggle<CR>
 
 " STATUS LINE (hanteras av powerline)
 " set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-
 
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
