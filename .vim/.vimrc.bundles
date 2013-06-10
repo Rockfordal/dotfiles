@@ -8,8 +8,10 @@ if has('gui')
   Bundle 'CSApprox'
 endif
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'stephenmckinney/vim-solarized-powerline'
-Bundle 'slim-template/vim-slim'
+" Bundle 'slim-template/vim-slim'
+Bundle 'gudleik/vim-slim'
 Bundle 'trailing-whitespace'
 Bundle 'gitv'
 Bundle 'airblade/vim-gitgutter'
@@ -33,10 +35,20 @@ Bundle 'vim-scripts/vim-coffee-script'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'scrooloose/syntastic'
 
+# Clayton:
+Bundle 'mattn/gist-vim'
+Bundle 'sickill/vim-pasta'
+Bundle 'othree/html5.vim'
+
+# tmux
+" Bundle 'jgdavey/vim-turbux'
+" Bundle 'jgdavey/tslime.vim'
+
 Bundle 'nanki/treetop.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
 Bundle 'xenoterracide/html.vim'
+
 Bundle 'vim-scripts/greplace.vim'
 Bundle 'timcharper/textile.vim'
 

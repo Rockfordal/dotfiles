@@ -7,6 +7,8 @@ let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 let g:solarized_italic=0
 let g:Powerline_theme='long'
+call togglebg#map("<F6>")
+match Error /\%80v.\+/
 let $pd = getcwd()
 
 if has("gui_running")
@@ -23,8 +25,13 @@ if has("gui_running")
   " Scrollbar is always off.
   set guioptions-=rL
 
-  " Enable gui tab labels
-  set guioptions+=e
+  " Enable gui tab labels for mac
+  if has("mac")
+    set guioptions+=e
+  endif
+
+  set guioptions-=r
+
 
   " Disable bell.
   set vb t_vb=
@@ -42,6 +49,7 @@ if has("gui_running")
   elseif $pd == '/home/rails/swedmak'
     color solarized
   elseif $pd == '/home/rails/test-driven-rails-app1/todos'
+    set background=dark
     color solarized
     set lines=30
     set columns=85
@@ -366,12 +374,85 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 "let g:neocomplcache_disable_auto_complete = 1
 "inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
 
-" Enable omni completion.
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" Clayton
+set list listchars=tab:»·,trail:·
+set clipboard=unnamed
+
+imap <Tab> <C-N>
+set completeopt=longest,menu
+set complete=.,w,b,u,t
+set wildmode=longest,list:longest
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+" Session management
+nmap <F2> :mksession! ~/.vim_session <CR> " Quick write session with F2
+nmap <F3> :source ~/.vim_session <CR>     " And load session with F3
+
+set tags=./../.git/tags,./tmp/tags,tags
+
+
+if has("autocmd")
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  autocmd BufWinEnter,WinEnter * setlocal cursorline
+  autocmd BufWinLeave,WinLeave * setlocal nocursorline
+
+  autocmd BufWinEnter,WinEnter * setlocal colorcolumn=80
+  autocmd BufWinLeave,WinLeave * setlocal colorcolumn=0
+
+  autocmd BufWinEnter,WinEnter * setlocal cursorcolumn
+  autocmd BufWinLeave,WinLeave * setlocal nocursorcolumn
+
+  autocmd BufWinLeave * call clearmatches()
+
+  autocmd BufNewFile,BufRead Gemfile setlocal filetype=ruby
+  autocmd BufNewFile,BufRead Guardfile setlocal filetype=ruby
+  autocmd BufNewFile,BufRead Appraisals setlocal filetype=ruby
+  autocmd BufNewFile,BufRead *.thor set filetype=ruby
+  autocmd BufNewFile,BufRead *.mustache set filetype=mustache
+  autocmd BufNewFile,BufRead *.gemfile set filetype=ruby
+  autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+  autocmd BufNewFile,BufRead *.md set filetype=markdown
+  autocmd BufNewFile,BufRead *.ejs set filetype=html
+  autocmd BufNewFile,BufRead *.scss set filetype=scss
+  autocmd BufNewFile,BufRead *.ru set filetype=ruby
+
+  autocmd FileType text,markdown setlocal textwidth=78
+
+  " Enable omni completion.
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+  " turn syntax highlighting on all the friggin' time;
+  " that way, chars > 80 get highlighted always
+  autocmd BufRead,BufNewFile * :syntax on
+
+  augroup END
+else
+  set autoindent
+endif
+
 
 " Enable heavy omni completion.
 if !exists('g:neocomplcache_omni_patterns')
@@ -397,6 +478,9 @@ if version >= 703
 else
   set number
 endif
+
+" Kill the capslock when leaving insert mode.
+autocmd InsertLeave * set iminsert=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vet ej

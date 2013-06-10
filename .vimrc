@@ -1,7 +1,4 @@
-" Use local bundles if available
-if filereadable(expand("~/dotfiles/anludot/.vimrc.bundles"))
-  source ~/dotfiles/anludot/.vimrc.bundles
-endif
+source $HOME/.vim/.vimrc.bundles
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
@@ -15,7 +12,6 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set autoindent
 set laststatus=2
 set showmatch
 set incsearch
@@ -36,10 +32,14 @@ set shell=bash
 set t_ti= t_te=
 " keep more context when scrolling off the end of a buffer
 set scrolloff=3
+
 " Store temporary files in a central spot
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"set backup
+"set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+"set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set nobackup
+set nowritebackup
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 " display incomplete commands
@@ -321,7 +321,5 @@ command! OpenChangedFiles :call OpenChangedFiles()
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
 " Use local vimrc if available
-if filereadable(expand("~/dotfiles/anludot/.vimrc.local"))
-  source ~/dotfiles/anludot/.vimrc.local
-endif
-
+" if filereadable(expand("~/dotfiles/anludot/.vimrc.local"))
+source $HOME/.vim/.vimrc.local
