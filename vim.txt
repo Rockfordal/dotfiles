@@ -22,7 +22,7 @@ fN   hoppa framåt till första 'N'
 )    slutet av mening
 }    slutet av paragraf
 
-a    infoga efter markör 
+a    infoga efter markör
 A    infoga efter raden
 i    infoga
 I    Infoga i början av raden
@@ -82,11 +82,11 @@ gT          förra tab
 
 # Split
 Ctrl+w s    split horisontellt
+ctrl+w v    split vertikalt
 ctrl+w j    hoppa upp
 ctrl+w k    hoppa ner
 ctrl+w J    flytta ner
 ctrl+w K    flytta upp
-ctrl+w v    split vertikalt
 ctrl+w h    hoppa vänster
 ctrl+w l    hoppa höger
 ctrl+w H    flytta vänster
