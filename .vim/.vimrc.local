@@ -1,10 +1,7 @@
-
 " Färger
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " let g:solarized_termtrans=1
-let g:solarized_contrast="high"
-let g:solarized_visibility="high"
+let g:solarized_contrast='high'
+let g:solarized_visibility='high'
 let g:solarized_italic=0
 let g:Powerline_theme='long'
 
@@ -34,10 +31,10 @@ if has("gui_running")
   set guioptions-=r
 
 
-  " Disable bell.
+  " No bell
   set vb t_vb=
 
-  " Don't flick cursor.
+  " Don't flick cursor
   set guicursor=a:blinkon0
 
   if $pd == '/Users/anders/rails/urdb19'
@@ -230,7 +227,7 @@ let NERDDefaultNesting = 0
 let NERDRemoveExtraSpaces = 1
 let NERDSpaceDelims = 1
 
-" NERDTree CONFIGURATION
+" NERDTree
 
 " Enable nice colors
 let NERDChristmasTree = 1
@@ -435,6 +432,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.ejs set filetype=html
   autocmd BufNewFile,BufRead *.scss set filetype=scss
   autocmd BufNewFile,BufRead *.ru set filetype=ruby
+  autocmd BufNewFile,BufRead *.slim set filetype=slim
 
   autocmd FileType text,markdown setlocal textwidth=78
 
@@ -448,6 +446,8 @@ if has("autocmd")
   " turn syntax highlighting on all the friggin' time;
   " that way, chars > 80 get highlighted always
   autocmd BufRead,BufNewFile * :syntax on
+
+  autocmd FileType slim set commentstring=/\ %s
 
   augroup END
 else
@@ -463,7 +463,7 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
 let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
-" For perlomni.vim setting.
+" För perlomni.vim
 " https://github.com/c9s/perlomni.vim
 let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
@@ -483,10 +483,7 @@ endif
 " Kill the capslock when leaving insert mode.
 autocmd InsertLeave * set iminsert=0
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vet ej
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set rtp+=~/.vam/vim-addon-manager
 "call vam#ActivateAddons(["FuzzyFinder"])
 " set foldmethod=syntax
-
