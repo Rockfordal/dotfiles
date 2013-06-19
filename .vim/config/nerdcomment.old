@@ -1,0 +1,4 @@
+" NERDCommenter
+let NERDDefaultNesting = 0
+let NERDRemoveExtraSpaces = 1
+let NERDSpaceDelims = 1

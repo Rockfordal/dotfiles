@@ -227,71 +227,106 @@ SScratch Nytt dok i ny flik som inte sparas
 :vimgrep /extend/ app/model/*.rb
 :vimgrep /extend/ **/*.rb
 
-<<<<<<< HEAD
 # Command-T
 =======
 #Test
-,r    kör ruby (ruby runner) /ej gary
-,t    kör sista test
-,T    kör närmaste test
-,a    kör alla test
-,c    kör features
-,w    kör wip features
-,,    växla sista fil
->>>>>>> 374d19bbe471d19b4d1b5c6e97b4b37b50892394
-,f    /
-,F    .
-,gm   /models/
-,gc   /controllers/
-,gh   /helpers/
-,gv   /views/
-,gl   /libs/
-,gp   /public/
-,gf   /features/
-,gg   Gemfile
-,gr   Rakefile
-,gR   rake routes => ny
+  ,r    kör ruby (ruby runner) /ej gary
+  ,t    kör sista test
+  ,T    kör närmaste test
+  ,a    kör alla test
+  ,c    kör features
+  ,w    kör wip features
+  ,,    växla sista fil
+  ,f    /
+  ,F    .
+  ,gm   /models/
+  ,gc   /controllers/
+  ,gh   /helpers/
+  ,gv   /views/
+  ,gl   /libs/
+  ,gp   /public/
+  ,gf   /features/
+  ,gg   Gemfile
+  ,gr   Rakefile
+  ,gR   rake routes => ny
 
 #Gary Bernhardt
-,t    kör sista test
-,T    kör närmaste test
-,a    kör alla test
-,c    kör features
-,w    kör wip features
-,,    växla sista fil
-:e %% aktuell sokväg
+  ,t    kör sista test
+  ,T    kör närmaste test
+  ,a    kör alla test
+  ,c    kör features
+  ,w    kör wip features
+  ,,    växla sista fil
+  :e %% aktuell sokväg
 
 # ctags   (tab-complete)
-:tag
-:ta
+  :tag
+  :ta
 
 # setcolors (bläddra bland färgscheman)
-:SetColors all
-F8          Föregående
-shift+F8    Nästa
+  :SetColors all
+  F8          Föregående
+  shift+F8    Nästa
 
 #Snipmate
-def+TAB           def method_name
-doctype+TAB       doctype!
-a.sel+TAB         a.select { |e|,  }
+  def+TAB           def method_name
+  doctype+TAB       doctype!
+  a.sel+TAB         a.select { |e|,  }
 
 # Silver Searcher
-:Ag <sökord>
-sedan v för split
-o
+  :Ag [option] <sökord> <katalog>
+  go   preview file
+  o    open (same as enter)
+  t    open in new tab
+  T    open in new tab silently
+  h    open in horizontal split
+  H    open in horizontal split silently
+  v    open in vertical split
+  gv   open in vertical split silently
+  q    close the quickfix window
+
+# textobj-rubyblock
+  var     markera block
+  vir     markera inuti block
 
 # ruby refactor
-:nnoremap <leader>rap  :RAddParameter<cr>
-:nnoremap <leader>rcpc :RConvertPostConditional<cr>
-:nnoremap <leader>rel  :RExtractLet<cr>
-:vnoremap <leader>rec  :RExtractConstant<cr>
-:vnoremap <leader>relv :RExtractLocalVariable<cr>
-:nnoremap <leader>rit  :RInlineTemp<cr>
-:vnoremap <leader>rrlv :RRenameLocalVariable<cr>
-:vnoremap <leader>rriv :RRenameInstanceVariable<cr>
-:vnoremap <leader>rem  :RExtractMethod<cr>
+  :nnoremap <leader>rap  :RAddParameter<cr>
+  :nnoremap <leader>rcpc :RConvertPostConditional<cr>
+  :nnoremap <leader>rel  :RExtractLet<cr>
+  :vnoremap <leader>rec  :RExtractConstant<cr>
+  :vnoremap <leader>relv :RExtractLocalVariable<cr>
+  :nnoremap <leader>rit  :RInlineTemp<cr>
+  :vnoremap <leader>rrlv :RRenameLocalVariable<cr>
+  :vnoremap <leader>rriv :RRenameInstanceVariable<cr>
+  :vnoremap <leader>rem  :RExtractMethod<cr>
 
-# andra plugin
-MRU       :MRU         öppnar från de 10 senaste dokumenten
-Matchit   %            växlar mellan def end och { }
+# Marvim (Makron)
 
+
+# Unimpaired
+  [q  :cprevious
+  ]q  :cprevious
+  ]a  :next
+  ]b  :bprevious
+  [f  nästa fil i mapp
+  ]f  föregående fil i mapp
+
+# Hammer (Markdown, textile)
+
+# Matchit
+  %     växlar olika tagar
+  <html>  </html>
+  def     end
+
+# Repeat
+  . upprepar senaste kommando och funkar nu även med plugin som surround, commentary
+
+# Speeddating
+  Ctrl A  öka datum
+  Ctrl X  Minska datum
+
+# Abolish
+  :Subvert/child{,ren}/adult{,s}/   Döper om alla former av barn till vuxen
+
+MRU
+  :MRU         öppnar från de 10 senaste dokumenten
