@@ -328,5 +328,8 @@ SScratch Nytt dok i ny flik som inte sparas
 # Abolish
   :Subvert/child{,ren}/adult{,s}/   Döper om alla former av barn till vuxen
 
+# Indent guides
+,ig växlar
+
 MRU
   :MRU         öppnar från de 10 senaste dokumenten
