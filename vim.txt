@@ -300,8 +300,9 @@ SScratch Nytt dok i ny flik som inte sparas
   :vnoremap <leader>rriv :RRenameInstanceVariable<cr>
   :vnoremap <leader>rem  :RExtractMethod<cr>
 
-# Marvim (Makron)
-
+# ZenCoding
+ctrl+y ,  för att köra
+ul>li*2
 
 # Unimpaired
   [q  :cprevious
@@ -312,6 +313,8 @@ SScratch Nytt dok i ny flik som inte sparas
   ]f  föregående fil i mapp
 
 # Hammer (Markdown, textile)
+
+# Marvim (Makron)
 
 # Matchit
   %     växlar olika tagar
