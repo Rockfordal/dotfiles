@@ -8,6 +8,7 @@
 	interactive = auto
 [alias]
 	#gary bernhardt:
+  a  = add .
 	st = status
 	ci = commit
 	co = checkout
