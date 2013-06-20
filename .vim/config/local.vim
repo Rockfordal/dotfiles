@@ -1,4 +1,6 @@
 " Färger
+set t_Co=256
+set background=dark
 " let g:solarized_termtrans=1
 let ruby_operators = 1 " Highlight ruby operators
 let g:clj_paren_rainbow = 1 " Paren Rainbow (diff colors for diff nestings)
@@ -6,6 +8,8 @@ let g:clj_dynamic_highlighting = 1 " Auto added used namespaces, generally be aw
 let g:solarized_contrast='high'
 let g:solarized_visibility='high'
 let g:solarized_italic=0
+let g:solarized_termcolors= &t_Co
+let g:Powerline_colorscheme='solarized256_dark'
 let g:Powerline_theme='long'
 let g:syntastic_check_on_open=1
 " let g:rails_statusline = 0 " Turn off rails bits of statusbar
@@ -24,8 +28,6 @@ if has("gui_running")
   set vb t_vb= " No bell
   set guicursor=a:blinkon0 " Don't flick cursor
   highlight clear SignColumn " match SignColumn with bg for vim-gitgutter..
-  let g:solarized_termcolors=256
-  let g:Powerline_colorscheme='solarized256_dark'
   " set transparency=0
 
   set guioptions-=T  " Hide toolbar
@@ -35,25 +37,15 @@ if has("gui_running")
 
   if has("mac")
     set guioptions+=e " Enable gui tab labels for mac
+  else
+    set guioptions-=e " Disable for linux
   endif
 
-  if $pd == '/Users/anders/rails/urdb19'
-    color solarized
-    " color white/pyte
-  elseif $pd == '/home/rails/urdb19'
-    color github256
-    highlight NonText guibg=#060606
-    highlight Folded  guibg=#0A0A0A guifg=#9090D0
-  elseif $pd == '/home/rails/swedmak'
-    color solarized
-  elseif $pd == '/home/rails/test-driven-rails-app1/todos' || $pd == '/Users/anders/rails/fler/test-driven-rails-app1/todos'
-    set background=dark
-    color solarized
-    set lines=30
-    set columns=85
-  else
-    color white/pyte2
-  endif
+  " color github256
+  "  highlight NonText guibg=#060606
+  "  highlight Folded  guibg=#0A0A0A guifg=#9090D0
+
+  color solarized
 
   " Gitv
   highlight diffAdded   guifg=#00bf00 guibg=#9cf9b1
@@ -71,7 +63,6 @@ if has("gui_running")
   " color white/reliable
   " color paper/peachpuff
 
-  " set background=dark
   " color brown/vilight   "js sass
   " color brown/twilight  "html
   " color railscasts      "ctrl
@@ -79,24 +70,12 @@ if has("gui_running")
   " color red/tetragrammaton
   " color black/synic
 else
-  set t_Co=256
-  if $pd == '/home/rails/test-driven-rails-app1/todos'
-    let g:Powerline_colorscheme='solarized256_dark'
-    color solarized
-    set lines=30
-  else
-    " set lines=25
-    " set columns=90
-    let g:solarized_termcolors= &t_Co
-    let g:Powerline_colorscheme='solarized256_light'
-    set background=light
-    color solarized
-    " color white/pyte2
-    " color github256
-    " color brown/hybrid
-    " color codeschool
-    " color black/grb256
-  endif
+  set lines=30
+  color solarized
+  " color white/pyte2
+  " color brown/hybrid
+  " color codeschool
+  " color black/grb256
 endif
 
 " öppna filer
@@ -143,10 +122,18 @@ map <leader>h :vnew %%
 nmap <F2> :mksession! ~/.vim_session <CR> " save
 nmap <F3> :source ~/.vim_session <CR>     " load
 
+" Newtab
+map <silent> <C-n> :tabnew<CR>
+
 " Insert Current time
 command! InsertTime :normal a<c-r>=strftime('%F %H:%M:%S.0 %z')<cr>
 
-" imap <Tab> <C-N>
+" Add whitespace inside of braces
+nnoremap <Leader>{ :%s/{\([^ ]\)/{ \1/gc<CR>
+nnoremap <Leader>} :%s/\([^ ]\)}/\1 }/gc<CR>
+
+" Insert Hashrocket
+imap <c-l> <space>=><space>
 
 set tags=./../.git/tags,./tmp/tags,tags " Ctags
 
@@ -158,7 +145,6 @@ if version >= 703
 else
   set number
 endif
-
 
 if has("autocmd")
   augroup vimrcEx " Put these in an autocmd group, so that we can delete them easily.

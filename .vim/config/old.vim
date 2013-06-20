@@ -54,8 +54,7 @@
 " endfunction
 " command! OpenChangedFiles :call OpenChangedFiles()
 
-" Insert Hashrocket
-" imap <c-l> <space>=><space>
+" imap <Tab> <C-N>
 
 " Filer
 " map <leader>gr :topleft :split config/routes.rb<cr>
