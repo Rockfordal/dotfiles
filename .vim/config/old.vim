@@ -97,5 +97,11 @@
   " autocmd BufRead *.mkd      set ai formatoptions=tcroqn2 comments=n:&gt;
   " autocmd BufRead *.markdown set ai formatoptions=tcroqn2 comments=n:&gt;
   "
-  autocmd InsertLeave * set iminsert=0 " Kill capslock when leaving insert mode
+  " autocmd InsertLeave * set iminsert=0 " Kill capslock when leaving insert mode
+
+" Indent guides
+" set ts=2 sw=4 et
+" set ts=2 sw=4 noet
+" let g:indent_guides_start_level = 2
+" let g:indent_guides_guide_size = 1
 

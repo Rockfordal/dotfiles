@@ -14,12 +14,6 @@ let g:Powerline_theme='long'
 let g:syntastic_check_on_open=1
 " let g:rails_statusline = 0 " Turn off rails bits of statusbar
 
-" Indent guides
-" set ts=4 sw=4 et
-" let g:indent_guides_start_level = 2
-" let g:indent_guides_guide_size = 1
-set ts=4 sw=4 noet
-
 let g:rspec_command = "Dispatch zeus rspec {spec}" " Snabba test
 
 let g:Powerline_symbols = 'fancy'
