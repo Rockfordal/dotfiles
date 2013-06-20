@@ -25,14 +25,15 @@ Bundle 'tsaleh/vim-matchit'
 " Filformat och Syntax
   Bundle 'vim-coffee-script'
   Bundle 'slim-template/vim-slim'
-  " Bundle 'tpope/vim-haml'
+  Bundle 'tpope/vim-haml'
+  Bundle 'tpope/vim-cucumber'
+  Bundle 'othree/html5.vim'
+  Bundle 'xenoterracide/html.vim'
   " Bundle 'juvenn/mustache.vim'
   " Bundle 'robgleeson/hammer.vim'
   " Bundle 'tpope/vim-markdown'
   " Bundle 'timcharper/textile.vim'
   " Bundle 'puppetlabs/puppet-syntax-vim'
-  " Bundle 'othree/html5.vim'
-  " Bundle 'xenoterracide/html.vim'
 
 " Exekvera
   Bundle 'thoughtbot/vim-rspec'
@@ -52,35 +53,34 @@ Bundle 'tsaleh/vim-matchit'
   Bundle 'Shougo/neocomplcache'
 
 " snippets
+  Bundle 'mattn/gist-vim'
   " Bundle 'Shougo/neosnippet.vim'
   " Bundle 'snipMate'
+  " Bundle 'scratch'
 
 " Markera
   Bundle 'textobj-user'
   Bundle 'nelstrom/vim-textobj-rubyblock'
 
 " sällan
-  " Bundle 'danro/rename.vim'
-  " Bundle 'marvim'
-  " Bundle 'tpope/vim-cucumber'
+  Bundle 'danro/rename.vim'
+  Bundle 'marvim'
   Bundle 'tpope/vim-unimpaired'
-  " Bundle 'tpope/vim-repeat'
-  " Bundle 'tpope/vim-speeddating'
-  " Bundle 'scrooloose/nerdtree'
-  " Bundle 'scratch'
+  Bundle 'tpope/vim-repeat'
+  Bundle 'tpope/vim-speeddating'
+  Bundle 'scrooloose/nerdtree'
 
 " verkar slöa ner
   " Bundle 'tpope/vim-git'
   " Bundle 'scrooloose/syntastic'
 
 " otestat:
-  " Bundle 'mattn/gist-vim'
-  " Bundle 'kana/vim-smartinput'
-  " Bundle 'ervandew/supertab'
-  " Bundle 'css_color'
-  " Bundle 'croaky/vim-colors-github'
+  Bundle 'kana/vim-smartinput'
+  Bundle 'ervandew/supertab'
   " Bundle 'ecomba/vim-ruby-refactoring'
   " Bundle 'rubycomplete.vim'
+  " Bundle 'css_color'
+  " Bundle 'croaky/vim-colors-github'
   " tmux
   " Bundle 'jgdavey/vim-turbux'
   " Bundle 'jgdavey/tslime.vim'
@@ -88,12 +88,11 @@ Bundle 'tsaleh/vim-matchit'
 " onödigt:
   " Bundle 'trailing-whitespace'
   " Bundle 'tpope/vim-abolish'
-  " Bundle 'nathanaelkane/vim-indent-guides' " Stödlinjer för indentering
+  Bundle 'nathanaelkane/vim-indent-guides'
   " Bundle 'Command-T'
-  " Bundle 'vim-scripts/tComment'
-  " Bundle 'nanki/treetop.vim' "gramatik analys
   " Bundle 'sickill/vim-pasta'
   " Bundle 'Solarized'
+  " Bundle 'nanki/treetop.vim' "gramatik analys
 
 " paj
   " Bundle 'rstacruz/sparkup.git'
