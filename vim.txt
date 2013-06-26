@@ -44,6 +44,9 @@ dd   klipp ut rad
 yy   kopiera rad
 y}   kopiera block
 
+gUw  upcase word
+guw  downcase word
+
 J    joina rader underifrån
 5J   joina 5 rader på en gång
 gJ   joina utan mellanrum
@@ -51,10 +54,6 @@ gJ   joina utan mellanrum
 .    upprepa sista
 @: upprepa sista kommando
 ,n   spara som ny fil
-
-#
-vit  markera inom tag
-vat  markera inom tag inklusive whitespace
 
 # Indrag
 >>     dra in
@@ -200,7 +199,12 @@ ctrl+i   hoppa fram
 :help         rails-navigation
 gf            hittar fil/partial/action(från vy) som matchar nuvarande ord
 
+#
+vit  markera inom tag
+vat  markera inom tag inklusive whitespace
+
 # Surround
+V: ds'        tar bort
 V: cs"'
 V: cs'"
 V: ysiw"      sätt "" omkring
