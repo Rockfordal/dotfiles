@@ -54,7 +54,7 @@ Bundle 'tsaleh/vim-matchit'
   Bundle 'Shougo/neocomplcache'
 
 " snippets
-  Bundle 'mattn/gist-vim'
+  " Bundle 'mattn/gist-vim'
   " Bundle 'Shougo/neosnippet.vim'
   " Bundle 'snipMate'
   " Bundle 'scratch'
@@ -78,8 +78,8 @@ Bundle 'tsaleh/vim-matchit'
 " otestat:
   Bundle 'kana/vim-smartinput'
   Bundle 'ervandew/supertab'
-  " Bundle 'ecomba/vim-ruby-refactoring'
-  " Bundle 'rubycomplete.vim'
+  Bundle 'ecomba/vim-ruby-refactoring'
+  Bundle 'rubycomplete.vim'
   " Bundle 'css_color'
   " Bundle 'croaky/vim-colors-github'
   " tmux
@@ -89,7 +89,7 @@ Bundle 'tsaleh/vim-matchit'
 " onödigt:
   " Bundle 'trailing-whitespace'
   " Bundle 'tpope/vim-abolish'
-  Bundle 'nathanaelkane/vim-indent-guides'
+  " Bundle 'nathanaelkane/vim-indent-guides'
   " Bundle 'Command-T'
   " Bundle 'sickill/vim-pasta'
   " Bundle 'Solarized'
