@@ -1,21 +1,25 @@
 " Make the top match be at the top
 let g:ctrlp_match_window_reversed = 1
 
-" Show 25 results
+" Results shown
 let g:ctrlp_max_height = 10
 
 " Lets use git to figure out what files you have
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co']
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co']
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard', 'find %s -type f']
 
 " Only use the nearest parent dir with a .git folder
 let g:ctrlp_working_path_mode = 'r'
 
-let g:ctrlp_custom_ignore = {
-   \ 'dir':  '\v[\/]\.(git|hg|svn)$|public/*|txt/*|/assets/javascripts/tinymce/*|assets/javascripts/ui/*',
-   \ 'file': '\v\.(exe|so|dll|.gz|.log|min.js)$',
-   \ }
-" let g:ctrlp_custom_ignore = 'vendor\|tmp'
+"    \ 'dir':  '\v[\/]\.(cache)$',
+"    \ 'file': '\v\.(so|log)$' }
+"
+" let g:ctrlp_custom_ignore = {
+"   \ 'dir':  '\.git$\|\txt$\|\public$\|\vendor$\|\tmp$\|\tinymce$\|\ui$',
+"   \ 'file': '\.min.js$\|\.gz$\|\.dll$',
+"   \ 'link': 'some_bad_symbolic_links' }
 
+let g:ctrlp_custom_ignore = '\coverage\|\.git$\|txt\|\public$\|tiny_mce\|fonts\|.gif\|.png\|.jpg\|vendor'
 " map <Leader>p :CtrlP<CR>
 
 " Sök inte igenom onödiga filer

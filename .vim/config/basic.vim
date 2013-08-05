@@ -66,3 +66,6 @@ set clipboard=unnamed
 set completeopt=longest,menu
 set complete=.,w,b,u,t
 set wildmode=longest,list:longest
+
+# vi vill kunna ändra första delen av tex: phone_params
+set iskeyword-=_

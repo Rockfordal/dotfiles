@@ -14,7 +14,7 @@ Bundle 'stephenmckinney/vim-solarized-powerline'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
+" Bundle 'airblade/vim-gitgutter'
 Bundle 'gitv'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
@@ -25,15 +25,16 @@ Bundle 'tsaleh/vim-matchit'
 " Filformat och Syntax
   Bundle 'vim-coffee-script'
   Bundle 'slim-template/vim-slim'
-  Bundle 'tpope/vim-haml'
   Bundle 'tpope/vim-cucumber'
+  Bundle 'tpope/vim-haml'
   Bundle 'othree/html5.vim'
   Bundle 'ZenCoding.vim'
+
   " Bundle 'xenoterracide/html.vim'
-  " Bundle 'juvenn/mustache.vim'
-  " Bundle 'robgleeson/hammer.vim'
+  Bundle 'juvenn/mustache.vim'
+  Bundle 'robgleeson/hammer.vim'
   " Bundle 'tpope/vim-markdown'
-  " Bundle 'timcharper/textile.vim'
+  Bundle 'timcharper/textile.vim'
   " Bundle 'puppetlabs/puppet-syntax-vim'
 
 " Exekvera
@@ -45,7 +46,7 @@ Bundle 'tsaleh/vim-matchit'
 
 " Sök
   Bundle 'rking/ag.vim'
-  " Bundle 'greplace.vim'
+  Bundle 'greplace.vim'
 
 " Autocomplete
   Bundle 'ctags.vim'
@@ -54,14 +55,14 @@ Bundle 'tsaleh/vim-matchit'
   Bundle 'Shougo/neocomplcache'
 
 " snippets
-  " Bundle 'mattn/gist-vim'
-  " Bundle 'Shougo/neosnippet.vim'
+  Bundle 'mattn/gist-vim'
+  Bundle 'Shougo/neosnippet.vim'
   " Bundle 'snipMate'
   " Bundle 'scratch'
 
 " Markera
-  Bundle 'textobj-user'
-  Bundle 'nelstrom/vim-textobj-rubyblock'
+  " Bundle 'textobj-user'
+  " Bundle 'nelstrom/vim-textobj-rubyblock'
 
 " sällan
   Bundle 'danro/rename.vim'
@@ -69,17 +70,18 @@ Bundle 'tsaleh/vim-matchit'
   Bundle 'tpope/vim-unimpaired'
   Bundle 'tpope/vim-repeat'
   Bundle 'tpope/vim-speeddating'
-  Bundle 'scrooloose/nerdtree'
+  " Bundle 'scrooloose/nerdtree'
 
 " verkar slöa ner
   " Bundle 'tpope/vim-git'
   " Bundle 'scrooloose/syntastic'
 
 " otestat:
-  Bundle 'kana/vim-smartinput'
-  Bundle 'ervandew/supertab'
-  Bundle 'ecomba/vim-ruby-refactoring'
-  Bundle 'rubycomplete.vim'
+  " Bundle 'kana/vim-smartinput'
+  " Bundle 'ervandew/supertab'
+  " Bundle 'ecomba/vim-ruby-refactoring'
+  " Bundle 'rubycomplete.vim'
+
   " Bundle 'css_color'
   " Bundle 'croaky/vim-colors-github'
   " tmux

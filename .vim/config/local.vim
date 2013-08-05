@@ -10,7 +10,7 @@ let g:solarized_visibility='high'
 let g:solarized_italic=0
 let g:solarized_termcolors= &t_Co
 let g:Powerline_colorscheme='solarized256_dark'
-let g:Powerline_theme='long'
+let g:Powerline_theme='short'
 let g:syntastic_check_on_open=1
 " let g:rails_statusline = 0 " Turn off rails bits of statusbar
 
