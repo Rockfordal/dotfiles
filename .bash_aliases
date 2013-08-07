@@ -8,6 +8,7 @@ alias 1920="xrandr -s 1920x1080"
 alias benq0="xcalib ~/Dokument/benq/benq_xl2420t.icc"
 alias benqu="xcalib ~/Dokument/benq/benq_xl2420t_user.icm"
 
+alias openarena="off && mouseaccel0 && openarena"
 
 # shell
 alias c="clear"
