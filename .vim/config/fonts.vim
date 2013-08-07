@@ -5,6 +5,7 @@ if has("win32")
 elseif has("mac")
   set gfn=Anonymous\ Pro\ for\ Powerline:h20
   " set gfn=Terminus\ (ttf)\ For\ Powerline:h20
+  " set gfn=Consolas\ for\ Powerline:h17
   " set gfn=Neep:h15
   " set gfn=Meslo\ LG\ S\ DZ\ for\ Powerline:h16
   " set gfn=Ubuntu\ Mono\ derivative\ Powerline:h19
