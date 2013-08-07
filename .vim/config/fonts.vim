@@ -3,12 +3,12 @@ if has("win32")
   au GUIEnter * simalt ~x
 
 elseif has("mac")
-  set gfn=Terminus\ (ttf)\ For\ Powerline:h19
+  set gfn=Anonymous\ Pro\ for\ Powerline:h20
+  " set gfn=Terminus\ (ttf)\ For\ Powerline:h20
   " set gfn=Neep:h15
   " set gfn=Meslo\ LG\ S\ DZ\ for\ Powerline:h16
   " set gfn=Ubuntu\ Mono\ derivative\ Powerline:h19
   " set gfn=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h16
-  " set gfn=Anonymous\ Pro\ for\ Powerline:h19
   " set gfn=DejaVu\ Sans\ Mono\ for\ Powerline:h16
   " set gfn=Inconsolata:h16
   " set gfn=Menlo:h14"
