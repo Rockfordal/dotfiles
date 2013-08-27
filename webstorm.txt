@@ -1,0 +1,4 @@
+ctrl + space		sök filer inom src=""
+ctrl + alt + home	visa relaterade filer
+ctrl +shift +n		goto file?
+alt + /			autocomplete mot dokumentet
