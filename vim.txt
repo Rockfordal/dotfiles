@@ -186,6 +186,10 @@ ctrl+o   hoppa bak
 ctrl+i   hoppa fram
 3+       gå till rad3 efter whitespace
 
+# Sessioner
+:mksession ~/ang.vims
+:source ~/ang.vims
+
 # Rails
 :A            hittar test
 :1R orgunit   hittar fil
