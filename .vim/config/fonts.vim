@@ -15,12 +15,13 @@ elseif has("mac")
   " set gfn=Menlo:h14"
   " set gfn=M+\ 1m:h16
   " set gfn=Source\ Code\ Pro:h13
-  " set gfn=Inconsolata-dz\ for\ Powerline\ 13
-  " set gfn=Menlo\ for\ Powerline\ 13
-  " set gfn=Monospace\ 13
-  " set gfn=Envy\ Code\ R\ 13
+  " set gfn=Inconsolata-dz\ for\ Powerline:h13
+  " set gfn=Menlo\ for\ Powerline:h13
+  " set gfn=Monospace:h16
+  " set gfn=Envy\ Code\ R:h13
 elseif has("unix")
-  set gfn=Neep\ 15
+  set gfn=Monospace\ 16
+  " set gfn=Neep\ 15
   set gfn=Terminus\ For\ Powerline\ 14
   " set gfn=Andale\ Mono\ 16
   " set gfn=Meslo\ LG\ M\ DZ\ for\ Powerline\ 14
@@ -31,6 +32,5 @@ elseif has("unix")
   " set gfn=M+\ 1m\ 16
   " set gfn=Menlo\ for\ Powerline\ 13
   " set gfn=Inconsolata-dz\ for\ Powerline\ 13
-  " set gfn=Monospace\ 13
   " set gfn=Envy\ Code\ R\ 13
 endif
