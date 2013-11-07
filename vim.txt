@@ -332,6 +332,11 @@ ul>li*2
 # Repeat
   . upprepar senaste kommando och funkar nu även med plugin som surround, commentary
 
+# Tabular
+  markera med Visuellt
+  :Tabularize /:git
+
+
 # Speeddating
   Ctrl A  öka datum
   Ctrl X  Minska datum

@@ -21,6 +21,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tsaleh/vim-matchit'
+Bundle 'Tabular'
 
 " Filformat och Syntax
   Bundle 'vim-coffee-script'
