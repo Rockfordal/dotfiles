@@ -9,6 +9,8 @@ alias benq0="xcalib ~/Dokument/benq/benq_xl2420t.icc"
 alias benqu="xcalib ~/Dokument/benq/benq_xl2420t_user.icm"
 
 alias openarena="off && mouseaccel0 && openarena"
+alias torrent="rtorrent -p 51414-51414"
+
 
 # shell
 alias c="clear"
@@ -84,7 +86,7 @@ alias rspec="rspec --color"
 alias spek="rspec -f h > public/assets/spec.html"
 alias clean="rake assets:clean && rake tmp:clear"
 alias rensa="find . -depth -name '.AppleDouble' -exec rm -Rf {} \; &&find . -depth -name ':2eDS_Store' -exec rm -Rf {} \; && find . -depth -name '.DS_Store' -exec rm -Rf {} \;"
-alias svenska="setxkbmap se"
+alias svenska='setxkbmap -option "" -variant "" se'
 
 # verktyg
 alias guard="bundle exec guard"
