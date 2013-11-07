@@ -13,6 +13,7 @@ let g:Powerline_colorscheme='solarized256_dark'
 let g:Powerline_theme='short'
 let g:syntastic_check_on_open=1
 " let g:rails_statusline = 0 " Turn off rails bits of statusbar
+let vimrubocop_config='~/.vim/config/rubocop.yml'
 
 let g:rspec_command = "Dispatch zeus rspec {spec}" " Snabba test
 
