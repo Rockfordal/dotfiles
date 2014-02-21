@@ -30,6 +30,9 @@ Bundle 'Tabular'
   Bundle 'tpope/vim-haml'
   " Bundle 'othree/html5.vim'
   Bundle 'ZenCoding.vim'
+  Bundle 'nginx.vim'
+  Bundle 'JSON.vim'
+
 
   " Bundle 'xenoterracide/html.vim'
   Bundle 'juvenn/mustache.vim'
