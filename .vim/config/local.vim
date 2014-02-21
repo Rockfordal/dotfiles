@@ -107,11 +107,11 @@ nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
 
-map <leader>dd :edit config/database.yml<cr>
 map <leader>de :edit config/environments/development.rb<cr>
 map <leader>pe :edit config/environments/production.rb<cr>
-map <leader>gr :edit config/routes.rb<cr>
 map <leader>gR :call ShowRoutes()<cr>
+map <leader>gd :edit config/database.yml<cr>
+map <leader>gr :edit config/routes.rb<cr>
 map <leader>gg :tabnew Gemfile<cr>
 map <leader>f :Ack<Space>
 
