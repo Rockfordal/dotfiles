@@ -126,8 +126,9 @@ ctrl+w <>   ändra höjd
 :set laaststatus=2
 :marks
 :pwd
-+:cd                       directory for file
-+:lcd                      directory for window
+:retab            konvertera tabbar till mellanslag
++:cd              directory for file
++:lcd             directory for window
 
 # Folda
 za  toggle
@@ -176,6 +177,7 @@ v       visuellt läge tecken
 ctrl+g  var är jag?
 :helptags ~/.vim/doc      import standard plugin docs
 :call pathogen#helptags() import pathogen plugin docs
+:set titlestring=Grunt
 
 # Coolt
 vwc      visuellt markera och infoga över ett ord
@@ -185,6 +187,7 @@ daw      delete around word
 ctrl+o   hoppa bak
 ctrl+i   hoppa fram
 3+       gå till rad3 efter whitespace
+
 
 # Sessioner
 :mksession ~/ang.vims
@@ -229,7 +232,6 @@ SScratch Nytt dok i ny flik som inte sparas
 
 # Fugutive
 :Gstatus :Gdiff :Gcommit :Gmove :Gremove :Gbrowse :Grep :Gblame
-
 
 # Sök/Ersätt
 :vimgrep /extend/ app/model/*.rb

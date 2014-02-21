@@ -1,4 +1,51 @@
-ctrl + space		sök filer inom src=""
-ctrl + alt + home	visa relaterade filer
-ctrl +shift +n		goto file?
-alt + /			autocomplete mot dokumentet
+# Funktioner
+- Databashanterare
+- Git
+- Virtuellt filsystem (historik, backup)
+- Inspektor
+- Debug, breakpoints
+- Refaktorisering
+- Autocomplete
+- Stavning
+- Live mallar
+- kompilering (coffescript mm)
+- Integration:
+    Trello, Pomodoro, Heroku, Pastebin, Github
+- Språk:
+    Ruby, Rails, Go, AngularJS, Karma, SQL, Bash
+    Dart, Typescript, CoffeScript, SASS, LESS, HAML, SLIM, Gherkin(Cucumber)
+- Integrerade Test
+- Upptäcker och installerar/uppdaterar gems vid behov
+- Runtime (Ruby, Node)
+- Dubblettsökning
+- Presentationsläge
+- Terminal
+- Bokmärken
+- Hitta var koden används
+
+Generellt:
+alt + home        Navigeringsfält
+alt + enter       Föreslå fix
+cmd + alt + m     Extrahera Metod
+cmd + e           Senaste filer
+cmd + o           Öppna fil
+cmd + shift + o   Sök fil
+cmd + alt + o     Sök Symbol
+cmd + shift + i   Sök Symbol Preview (ej i vim mode)
+cmd + f12         Sök i struktur
+cmd + alt + a     Kör action
+ctrl + alt + v    VCS Operations
+cmd + k           Commit Changes
+cmd + ,           Keymaps
+
+# Custom:
+cmd + t           Refactor This
+
+# Plugin
+ctrl + ö          Ace Jump
+
+# Funkar ej:
+ctrl + space      sök filer inom src=""
+ctrl + alt + home visa relaterade filer
+ctrl +shift +n    goto file?
+alt + /           autocomplete mot dokumentet
