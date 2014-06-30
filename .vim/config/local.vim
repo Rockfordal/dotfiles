@@ -72,7 +72,7 @@ if has("gui_running")
   " color black/synic
 else
   set lines=30
-  color solarized
+  color ir_black
   " color white/pyte2
   " color brown/hybrid
   " color codeschool
