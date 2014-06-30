@@ -1,0 +1,2 @@
+# titta på en raderad fil:
+git show HEAD^:bower.json 
