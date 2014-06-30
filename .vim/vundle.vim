@@ -8,6 +8,7 @@ if has('gui')
   " Bundle 'CSApprox'
 endif
 
+Bundle "mattn/emmet-vim"
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'stephenmckinney/vim-solarized-powerline'
