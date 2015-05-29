@@ -1,0 +1,21 @@
+#Datastore
+.connect http://andersl:tjabba@127.0.0.1:8081
+ds.Company.all();
+ds.Company(11).remove();
+var s = ds.Company.query('step is null');
+ds.Company.find(5);
+ds.Compay.createEntity()
+
+#WAF (AngularJS)
+
+
+<a ng-click="employees.$prevPage()">Föregående</a>
+emp.$save()
+
+<div class="list-group">
+<a class="list-group-item {{$parent.emp = emp ? 'active' : ''}}"
+  ng-repeat="emp in employees"
+  ng-click="$parent.emp = emp">
+{{emp.firstName}} {{emp.lastName}} - <strong>{{emp.company.name}}</strong>
+</a>
+</div>
