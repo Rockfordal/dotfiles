@@ -21,8 +21,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
+
 " Bundle 'tsaleh/vim-matchit'
 " Bundle 'Tabular'
+
+Bundle 'mattn/emmet-vim'
 
 " Filformat och Syntax
   Bundle 'vim-coffee-script'
@@ -33,6 +36,7 @@ Bundle 'kien/ctrlp.vim'
   Bundle 'ZenCoding.vim'
   Bundle 'nginx.vim'
   Bundle 'JSON.vim'
+  "Bundle 'Erlang-plugin-package'
 
   "* Bundle 'xenoterracide/html.vim'
   " Bundle 'juvenn/mustache.vim'
