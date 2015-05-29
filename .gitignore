@@ -4,6 +4,7 @@
 capybara-*.html
 .rspec
 .vim/bundle
+.vim/.netrwhist
 /.bundle
 /vendor/bundle
 /log/*
