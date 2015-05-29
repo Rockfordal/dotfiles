@@ -12,6 +12,11 @@ alias openarena="off && mouseaccel0 && openarena"
 alias torrent="rtorrent -p 51414-51414"
 
 
+#heroku
+#echo 'PATH="/usr/local/heroku/bin:$PATH"' >> ~/.profile
+alias heroku="/usr/local/heroku/bin/heroku"
+
+
 # shell
 alias c="clear"
 alias rvm1=". ~/.bashrc.local"
@@ -112,3 +117,7 @@ alias sol1='VBoxManage startvm "Sol 11.1" --type headless'
 alias solsave='VBoxManage controlvm "Sol 11.1" savestate'
 alias solresume='VBoxManage controlvm "Sol 11.1" resume'
 alias slowcd='hdparm -E12 /dev/sr0'
+
+alias win7rdp1='VBoxManage controlvm "Sol 11.1" vrde on'
+alias win7rdp0='VBoxManage controlvm "Sol 11.1" vrde off'
+
