@@ -1,0 +1,17 @@
+// v 2.4:
+db = db.getSiblingDB('admin')
+db.addUser( { user: "Carlos",
+              pwd: "Moon1234",
+              roles: [ "clusterAdmin" ],
+              otherDBRoles: { config: [ "readWrite" ]
+            } } )
+
+
+mongoimport -d overlord -c sales --type csv --file brutto-wycore_prospekt.csv --headerline
+db.sales_import.renameCollection("salesimport")
+
+db.orgunit.find().forEach(function(doc) { print(doc.orgnamn) });
+db.orgunit.find().forEach(function(doc) {
+  doc.namn = doc.orgnamn;
+  db.orgunit.save(doc)
+});
