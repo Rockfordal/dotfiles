@@ -49,3 +49,36 @@ ctrl + space      sök filer inom src=""
 ctrl + alt + home visa relaterade filer
 ctrl +shift +n    goto file?
 alt + /           autocomplete mot dokumentet
+
+//Bra att konfigurera
+* Browser
+
+//keymap ändrat:
+ctrl + t    Refactor this
+ctrl + o    Acejump
+
+//Linux ändrat
+ctrl + alt + o      Find in path
+
+//Default:
+alt + 1             Projekt
+alt + 2             Favoriter
+alt + 4             Run
+alt + 5             Debug
+alt + 6             Todo
+alt + 7             Structure
+alt + 9             Changes
+ctrl + tab          Switcher
+ctrl + shift + a    action
+ctrl + w            expandera markering
+shift + F10         Run
+ctrl + shift + n	goto file?
+ctrl + e            Recent files
+
+ctrl + space		sök filer inom src=""
+ctrl + alt + home	visa relaterade filer
+alt + /			    autocomplete mot dokumentet
+alt + höger         nästa tab
+alt + vänster       förra tab
+ctrl + alt + t      surround with ..
+
