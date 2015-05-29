@@ -1,0 +1,30 @@
+; Paket
+evil
+solarized-theme  (load-theme solarized-dark)
+magit
+clojure-mode
+cider
+; powerline
+; rainbow-delimiters
+; rainbow-mode
+
+; Jobb
+M-x elpamr-create-mirror-for-installed	
+
+; Medan man jobbar
+C-x C-s					spara
+C-x C-f					finn fil
+C-x kill				döda buffer
+C-x pilar				winner (ångra fönster)
+C-x 0					kill this window
+C-x 1 					kill other windows
+C-x 2 					split v
+C-x 3 					split h
+C-x b       				Switch buffer
+C-x k       				Kill buffer
+
+;; Eval
+;(print (font-family-list))
+;(member "Inconsolata" (font-family-list))
+;(describe-font)
+

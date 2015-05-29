@@ -1,0 +1,57 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/andersl/.emacs.d/" . "auto-save-list/")
+ ("/etc/" . "portage/")
+ ("/home/andersl/" . ".emacs.d/")
+ ("/home/" . "andersl/")
+ ("/mnt/" . "big/")
+ ("/" . "home/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/andersl/.emacs.d/"
+ "/home/andersl/"
+ "/home/andersl/emacs/"
+ "/home/andersl/.emacs.d/auto-save-list/"
+ "/etc/portage/"
+ "/home/andersl/Bilder/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "a.clj"
+ "emacs.txt"
+ ".saves-6070-localhost~"
+ "package.use"
+ "Magdalena.png"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/andersl/.emacs.d/" (21863 43642 792077 337000) "emacs-customizations.el" "ido.last" "backup/" "lib/" "rubytapas-theme.el" "%backup%~" "elpa/" "../" "var/" "elpa-mirror/" "./" "init.el" "auto-save-list/")
+
+ ("/home/andersl/" (21863 43458 615085 842000) ".thumbnails/" ".erc/" ".gem/" "emacs_for_clojure.tar.bz2" "VirtualBox VMs/" ".lastpass/" ".jspm/" ".node-gyp/" ".forever/" "logs/" ".Skype/" "local/" ".gvimrc" ".gitalias.sh" ".links/" ".subversion/" ".marvim/" ".dartEditor/" ".rtorrent.rc" ".Wakanda Server/" "a.clj" ".emacs.d/" ".gkrellm2/" ".#a.clj" ".xinitrc" ".zlogin" ".VirtualBox/" ".bower/" "Downloads/" ".macromedia/" ".dbshell" ".openarena/" "Documents/" ".xfce4-session.verbose-log.last" ".lesshst" ".local/" "emacs/" "Desktop/" ".vim/" ".dbus/" ".neocomplcache/" ".vnc/" ".putty/" "solarized-pack/" "git/" "world.txt" ".pm2/" ".xscreensaver" "perfekt_musaccel.txt" ".live-packs/" ".bashrc" "dev" ".dartium/" ".meteor/" "Videos/" "../" ".filezilla/" ".jline-org.codehaus.groovy.tools.shell.Main.history" ".wine/" ".smartgit/" ".irb-history" ".toprc" "dotfiles/" "user" ".gentoo/" "Pictures/" ".gnupg/" ".lein/" ".mongorc.js" ".firebaserc" ".cache/" ".WebStorm9/" ".conkyrc" ".bash_aliases" ".boot-jvm-options" ".xfce4-session.verbose-log" ".gstreamer-0.10/" ".jline-clojure.main.history" "Public/" "Templates/" ".mozilla/" ".config/" ".zshrc" ".m2/" ".groovy/" ".mplayer/" ".Xauthority" ".gtk-bookmarks" ".pki/" ".heroku/" ".boot/" ".npmrc" ".vimrc" "solidcall.tar.lrz" ".viminfo" ".purple/" ".xonotic/" ".ICEauthority" "Bilder/" ".h2.server.properties" "./" ".gitignore" "Dokument/" "solidcall.h2.db" ".githelpers" ".warsow-1.0/" "hej.h2.db" ".gnome/" ".adobe/" "beacons.txt" "#a.clj#" ".java/" "matris3.tar.bz2" ".gitconfig" ".xsession" ".rvm/" ".psql_history" ".q3a/" ".distcc/" ".mkshrc" "matris.tar.bz2" ".ssh/" ".tmux.conf" ".bash_profile" ".bash_history" "profile.boot" ".tmux.conf.local" ".quakelive/" ".xsession-errors" "Music/" ".profile" ".npm/")
+
+ ("/home/andersl/.emacs.d/auto-save-list/" (21863 42224 624142 829000) ".saves-6078-localhost~" ".saves-6070-localhost~" "../" "./")
+
+ ("/home/andersl/emacs/" (21863 40835 886206 962000) "oh-my-emacs/" "../" "emacs.txt~" "flyingmachine_emacs-for-clojure/" "emacs.txt" "purcel/" "./" "prelude/" "myelpa/" ".emacs-live.el" "live/")
+
+ ("/etc/portage/" (21862 42799 340982 415000) "make.conf.kde" "package.use" "repo.postsync.d/" "make.conf.bak" "make.conf.backup" "make.conf.catalyst" "postsync.d/" "make.profile/" "savedconfig/" "package.keywords" "../" "make.conf.default" "repos.conf/" "bin/" "make.conf" "./" "make.conf~")
+
+ ("/etc/" (21863 18518 707237 590000) "portage/" "xdg/" "pkcs11/" "etc-update.conf" "sensors3.conf" "passwd" "security/" "gai.conf" "localtime" "group-" "conf.d/" "udev/" "sysctl.d/" "irssi.conf" "._cfg0000_rc.conf" "mplayer2/" "locale.gen" "resolv.conf" "logrotate.d/" "gtk-2.0/" "inittab" "issue.logo" "modprobe.d/" "hosts.allow" "eixrc/" "slsh.rc" "ca-certificates/" "gpm/" "fuse.conf" "sensors.d/" "glances/" "colordiffrc" "mke2fs.conf" "polkit-1/" "layman/" "pm/" "gconf/" "zfs/" "hosts" "nullmailer/" "group" "colordiffrc-lightbg" "ConsoleKit/" "drirc" "shadow-" "rsyncd.conf" "prelink.conf" "machine-id" "cron.weekly/" "ssl/" "emacs/" "adobe/" "local.d/" "revdep-rebuild/" "UPower/" "profile.d/" "screenrc" "eselect/" "gkrellmd.conf" "os-release" "udhcpd.conf" "iproute2/" "DIR_COLORS" "java-config-2/" "postgresql-9.4/" "wgetrc" "shells" "slim.conf" "papersize" "sysstat.ioconf" "terminfo/" "../" "conky/" "speech-dispatcher/" "cups/" "ImageMagick-6/" "environment" "mc/" "services" "ld.so.conf.d/" "systemd/" "login.defs" "opt/" "mongos.conf" "csh.env" "kernel/" "sudoers" "grub.d/" "._cfg0001_rc.conf" "eclean/" "networks" "xml/" "sandbox.d/" "dfs/" "gtk-3.0/" "fstab" "sysstat" "X11/" "._cfg0000_sudoers" "rmt" "default/" "ld.so.cache" "udisks2/" "resolv.conf.bak" "host.conf" "mpv/" "sgml/" "._cfg0000_locale.gen" "mongodb.conf" "passwd-" "filesystems" "vbox/" "profile" "issue" "fonts/" "tmpfiles.d/" "chromium/" "gshadow-" "ssh/" "sandbox.conf" "gshadow" "profile.env" "zsh/" "./" "ca-certificates.conf" ".pwd.lock" "bash/" "mtab" "cron.daily/" "at-spi2/" "metalog.conf" "xorg.conf" "protocols" "geoclue/" "man_db.conf" "shadow" "pam.d/" "dbus-1/" "squid/" "mime.types" "dispatch-conf.conf" "rpc" "init.d/" "slim.conf.default" "rc.conf" "e2fsck.conf" "vim/" "nanorc" "sysctl.conf" "inputrc" "gentoo-release" "nsswitch.conf" "xinetd.d/" "prelink.conf.d/" "ld.so.conf" "sudoers.d/" "nginx/" "env.d/" "skel/" "runlevels/")
+
+ ("/home/andersl/Bilder/" (21773 12756 114290 96000) "../" "Magdalena.png" ".directory" "./")
+
+ ("/mnt/big/" (21473 14601 41131 641000) "../" "./")
+
+ ("/mnt/" (21800 1763 321273 81000) "tank/" "big/" "usb/" "fem/" "../" "ten/" "montera.sh" "320/" "./" ".keep")
+
+ ("/home/" (21822 14671 38816 565000) "andersl/" "../" "node/" "./" ".keep")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
