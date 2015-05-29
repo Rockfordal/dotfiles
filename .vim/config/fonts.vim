@@ -20,9 +20,10 @@ elseif has("mac")
   " set gfn=Monospace:h16
   " set gfn=Envy\ Code\ R:h13
 elseif has("unix")
+  " set gfn=Anonymous\ Pro\ for\ Powerline\ 20
   set gfn=Monospace\ 16
   " set gfn=Neep\ 15
-  set gfn=Terminus\ For\ Powerline\ 14
+  " set gfn=Terminus\ For\ Powerline\ 14
   " set gfn=Andale\ Mono\ 16
   " set gfn=Meslo\ LG\ M\ DZ\ for\ Powerline\ 14
   " set gfn=Ubuntu\ Mono\ Regular\ 16
