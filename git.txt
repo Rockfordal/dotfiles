@@ -1,2 +1,17 @@
 # titta på en raderad fil:
 git show HEAD^:bower.json 
+
+# pusha lokal branch till remote och tracka
+git push -u origin test
+
+# hämta ner och tracka remote branch
+git checkout --track origin/test
+
+# utför rebase i temporär branch om du är osäker
+git co feature
+git co -b temporary-branch
+git rebase -i master
+# [Clean up history]
+git co master
+git merge temporary-branch
+
