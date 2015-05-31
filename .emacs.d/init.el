@@ -8,6 +8,12 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
 
+;; Cider Bookmarks
+(setq cider-known-endpoints '(("localhost" "24000")
+			      ("fire" "fire.solidcrm.se" "24000")
+			      ("urdb" "db.urkraft.se" "24000")
+			      ("quattro" "quattro.solidcrm.se" "24000")))
+
 ;; Highlight Parentheses
 (require 'paren)
 (setq show-paren-style 'parenthesis)
@@ -120,4 +126,5 @@
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 (add-hook 'clojure-mode-hook          #'paredit-mode)
+
 
