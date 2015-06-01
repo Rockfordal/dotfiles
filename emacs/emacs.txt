@@ -12,17 +12,18 @@ cider
 M-x elpamr-create-mirror-for-installed	
 
 ; Medan man jobbar
-C-x C-s					spara
-C-x C-f					finn fil
-C-x kill				döda buffer
-C-x pilar				winner (ångra fönster)
-C-x 0					kill this window
-C-x 1 					kill other windows
-C-x 2 					split v
-C-x 3 					split h
-C-x b       				Switch buffer
-C-x k       				Kill buffer
-
+C-x C-s				spara
+C-x C-f				finn fil
+C-x kill			döda buffer
+C-x pilar			winner (ångra fönster)
+C-x 0				kill this window
+C-x 1 				kill other windows
+C-x 2 				split v
+C-x 3 				split h
+C-x b       			Switch buffer
+C-x k       			Kill buffer
+C-s 				Interactive Search
+C-r 				Interactive Search
 ;; Eval
 ;(print (font-family-list))
 ;(member "Inconsolata" (font-family-list))
