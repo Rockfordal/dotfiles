@@ -44,6 +44,7 @@
  '(magit-diff-use-overlays nil)
  '(magit-use-overlays nil)
  '(menu-bar-mode nil)
+ '(org-agenda-files (quote ("~/org/todo.org")))
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
