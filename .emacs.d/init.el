@@ -23,10 +23,29 @@
 (require 'projectile)
 (projectile-global-mode)
 
+;; Clojure-mode
+(add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))
+
+;; restclient
+(load "/home/andersl/.emacs.d/lisp/restclient-20150513.131.el")
+
+;; Smex
+(require 'smex)
+(global-set-key (kbd "M-x") 'smex)
+;(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
 ;; Remove the default splash screen
 (setq inhibit-startup-message t)
 ;; Don't add any comments To the *scratch* buffer
 (setq initial-scratch-message nil)
+
+(require 'powerline)
+(powerline-center-theme) ; default center
+
+;; Helm-dash
+; Redis
+(setq helm-dash-common-docsets '("Clojure"))
 
 ;; Customizations file /Avdi
 (setq abg-emacs-init-file load-file-name)
@@ -67,9 +86,19 @@
  '(scroll-bar-mode nil)
 '(tool-bar-mode nil))
 
+(set-default-font "Apercu-16")
+;(set-default-font "Office\ Code\ Pro-16")
+;(set-default-font "Source\ Code\ Pro-16")
+;(set-default-font "CamingoCode-18")
+;(set-default-font "DejaVuSansMono-18")
+;(set-default-font "M+\ 1m-20")
 ;(set-default-font "Inconsolata-20")
-(custom-set-faces
- '(default ((t (:family "Inconsolata" :slant normal :weight normal :height 194 :width normal)))))
+;(set-default-font "Anonymous Pro-19")
+;(set-default-font "Monaco-18")
+;(set-default-font "Consolas-20")
+
+; (custom-set-faces
+; '(default ((t (:family "Apercu" :slant normal :weight normal :height 194 :width normal)))))
 
 ;(switch-to-buffer "anlu")
 ;(require 'chruby)
