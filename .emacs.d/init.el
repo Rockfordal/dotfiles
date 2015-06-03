@@ -43,6 +43,7 @@
 ; (custom-set-faces
 ; '(default ((t (:family "Apercu" :slant normal :weight normal :height 194 :width normal)))))
 
+;; Fixa så man kan skriva brackets med ALT
 (if (eq system-type 'darwin)
   ;; Fixa så man kan skriva brackets med ALT
   (if (boundp 'ns-command-modifier)
