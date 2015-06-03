@@ -1,5 +1,10 @@
 ;; MELPA
 (require 'package) ;; You might already have this line
+
+; Använd en lokal mirror
+;(add-to-list 'load-path "~/.emacs.d/elpa-mirror/")
+;(require 'elpa-mirror)
+
 (add-to-list 'package-archives
            ;;'("melpa" . "http://melpa.org/packages/") t)
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
@@ -8,11 +13,67 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
 
+; list the packages you want
+(setq package-list '(smex powerline))
+
+; fetch the list of packages available 
+(or (file-exists-p package-user-dir) (package-refresh-contents)) 
+
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+(add-to-list 'custom-theme-load-path "~/.emacs.d/lib/color-themes")
+;(setq sml/no-confirm-load-theme 'solarized-dark)
+;color-theme-sanityinc-solarized-dark
+;(load-theme 'solarized-dark)
+
+(set-default-font "Apercu-16")
+;(set-default-font "Office\ Code\ Pro-16")
+;(set-default-font "Source\ Code\ Pro-16")
+;(set-default-font "CamingoCode-18")
+;(set-default-font "DejaVuSansMono-18")
+;(set-default-font "M+\ 1m-20")
+;(set-default-font "Inconsolata-20")
+;(set-default-font "Anonymous Pro-19")
+;(set-default-font "Monaco-18")
+;(set-default-font "Consolas-20")
+
+; (custom-set-faces
+; '(default ((t (:family "Apercu" :slant normal :weight normal :height 194 :width normal)))))
+
+(if (eq system-type 'darwin)
+  ;; Fixa så man kan skriva brackets med ALT
+  (if (boundp 'ns-command-modifier)
+      (setq ns-command-modifier 'meta))
+
+  (if (boundp 'ns-option-modifier)
+      (setq ns-option-modifier nil))
+;(switch-to-buffer "anlu")
+(setq ns-option-modifier nil) ;; anlu test
+)
+
+
+;; Customizations file /Avdi
+(setq abg-emacs-init-file load-file-name)
+(setq abg-emacs-config-dir
+  (file-name-directory abg-emacs-init-file))
+
+;; Set up 'custom' system
+(setq custom-file (expand-file-name "emacs-customizations.el" abg-emacs-config-dir))
+(load custom-file)
+
+(setq user-emacs-directory abg-emacs-config-dir)
+
+(setq backup-directory-alist
+      (list (cons "." (expand-file-name "backup" user-emacs-directory))))
+
 ;; Cider Bookmarks
 (setq cider-known-endpoints '(("localhost" "24000")
-			      ("fire" "fire.solidcrm.se" "24000")
-			      ("urdb" "db.urkraft.se" "24000")
-			      ("quattro" "quattro.solidcrm.se" "24000")))
+  ("fire" "fire.solidcrm.se" "24000")
+  ("urdb" "db.urkraft.se" "24000")
+  ("quattro" "quattro.solidcrm.se" "24000")))
 
 ;; Highlight Parentheses
 (require 'paren)
@@ -22,12 +83,13 @@
 ;; Enable projectile globally
 (require 'projectile)
 (projectile-global-mode)
+;((nil . ((projectile-globally-ignored-files . '(".nrepl-history" "target/*.*")))))
 
 ;; Clojure-mode
 (add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))
 
 ;; restclient
-(load "/home/andersl/.emacs.d/lisp/restclient-20150513.131.el")
+(load "~/.emacs.d/lisp/restclient-20150513.131.el")
 
 ;; Smex
 (require 'smex)
@@ -44,36 +106,12 @@
 (powerline-center-theme) ; default center
 
 ;; Helm-dash
-; Redis
-(setq helm-dash-common-docsets '("Clojure"))
+(setq helm-dash-common-docsets '("Clojure")) ; Redis
 
-;; Customizations file /Avdi
-(setq abg-emacs-init-file load-file-name)
-(setq abg-emacs-config-dir
-      (file-name-directory abg-emacs-init-file))
-
-;; Set up 'custom' system
-(setq custom-file (expand-file-name "emacs-customizations.el" abg-emacs-config-dir))
-(load custom-file)
-
-(setq user-emacs-directory abg-emacs-config-dir)
- 
-(setq backup-directory-alist
-      (list (cons "." (expand-file-name "backup" user-emacs-directory))))
-
-;(add-to-list 'load-path "~/.emacs.d/elpa-mirror/")
-;(require 'elpa-mirror)
-
-(add-to-list 'custom-theme-load-path "~/.emacs.d/lib/color-themes")
-;(setq sml/no-confirm-load-theme 'solarized-dark)
-;color-theme-sanityinc-solarized-dark
-;(load-theme 'solarized-dark)
-
-(load custom-file)
 (evil-mode)
 (winner-mode 1) ; undo fönster
 (windmove-default-keybindings)
-;(org-replace-disputed-keys)  ; en fix för nå i org, windmove? /Avdi G 
+;(org-replace-disputed-keys)  ; en fix för nå i org, windmove? /Avdi G
 
 (custom-set-variables
  '(blink-cursor-mode nil)
@@ -86,21 +124,6 @@
  '(scroll-bar-mode nil)
 '(tool-bar-mode nil))
 
-(set-default-font "Apercu-16")
-;(set-default-font "Office\ Code\ Pro-16")
-;(set-default-font "Source\ Code\ Pro-16")
-;(set-default-font "CamingoCode-18")
-;(set-default-font "DejaVuSansMono-18")
-;(set-default-font "M+\ 1m-20")
-;(set-default-font "Inconsolata-20")
-;(set-default-font "Anonymous Pro-19")
-;(set-default-font "Monaco-18")
-;(set-default-font "Consolas-20")
-
-; (custom-set-faces
-; '(default ((t (:family "Apercu" :slant normal :weight normal :height 194 :width normal)))))
-
-;(switch-to-buffer "anlu")
 ;(require 'chruby)
 ;(chruby "jruby-1.7.2")
 
@@ -156,4 +179,5 @@
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 (add-hook 'clojure-mode-hook          #'paredit-mode)
 
-
+; Magit silence
+(setq magit-last-seen-setup-instructions "1.4.0")
