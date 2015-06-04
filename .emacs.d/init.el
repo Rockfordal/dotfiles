@@ -1,47 +1,72 @@
 ;; MELPA
 (require 'package) ;; You might already have this line
+(require 'cl)
 
 ; Använd en lokal mirror
 ;(add-to-list 'load-path "~/.emacs.d/elpa-mirror/")
 ;(require 'elpa-mirror)
 
+;(when (< emacs-major-version 24)
 (add-to-list 'package-archives
            ;;'("melpa" . "http://melpa.org/packages/") t)
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-(when (< emacs-major-version 24)
-    ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize) ;; You might already have this line
 
 ; list the packages you want
-(setq package-list '(smex powerline))
+;(setq package-list '(evil smex powerline projectile prodigy helm helm-projectile helm-dash clojure-mode
+;		     paredit "evil-paredit"))
+
+(defvar required-packages '(evil smex powerline projectile prodigy helm helm-projectile helm-dash clojure-mode paredit evil-paredit color-theme-sanityinc-solarized))
+
+; method to check if all packages are installed
+(defun packages-installed-p ()
+  (loop for p in required-packages
+        when (not (package-installed-p p)) do (return nil)
+        finally (return t)))
+
+; if not all packages are installed, check one by one and install the missing ones.
+(unless (packages-installed-p)
+  ; check for new packages (package versions)
+  (message "%s" "Emacs is now refreshing its package database...")
+  (package-refresh-contents)
+  (message "%s" " done.")
+  ; install the missing packages
+  (dolist (p required-packages)
+    (when (not (package-installed-p p))
+      (package-install p))))
 
 ; fetch the list of packages available 
-(or (file-exists-p package-user-dir) (package-refresh-contents)) 
+;(or (file-exists-p package-user-dir) (package-refresh-contents)) 
 
 ; install the missing packages
-(dolist (package package-list)
-  (unless (package-installed-p package)
-    (package-install package)))
+;(dolist (package package-list)
+;  (unless (package-installed-p package)
+;    (package-install package)))
+
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/lib/color-themes")
 ;(setq sml/no-confirm-load-theme 'solarized-dark)
 ;color-theme-sanityinc-solarized-dark
 ;(load-theme 'solarized-dark)
 
-(set-default-font "Apercu-16")
-;(set-default-font "Office\ Code\ Pro-16")
+(set-default-font "Pragmata\ Pro-18")
+;(set-default-font "Office\ Code\ Pro-16.5")
+;(set-default-font "M+\ 1m-19.5")
+;(set-default-font "Consolas-19.5")
+;(set-default-font "Andale Mono-19")
 ;(set-default-font "Source\ Code\ Pro-16")
-;(set-default-font "CamingoCode-18")
+;(set-default-font "Apercu-17")
 ;(set-default-font "DejaVuSansMono-18")
-;(set-default-font "M+\ 1m-20")
+;(set-default-font "CamingoCode-17")
 ;(set-default-font "Inconsolata-20")
 ;(set-default-font "Anonymous Pro-19")
 ;(set-default-font "Monaco-18")
-;(set-default-font "Consolas-20")
 
 ; (custom-set-faces
-; '(default ((t (:family "Apercu" :slant normal :weight normal :height 194 :width normal)))))
+  ; '(default ((t (:family "M+\ 1m" :slant normal :weight normal :height 170 :width normal)))))
 
 ;; Fixa så man kan skriva brackets med ALT
 (if (eq system-type 'darwin)
