@@ -29,3 +29,11 @@ C-r 				Interactive Search
 ;(member "Inconsolata" (font-family-list))
 ;(describe-font)
 
+; Neotree
+C-c C-n				create
+C-c C-d				delete
+C-c C-r				rename
+C-c C-c				root
+g				refresh
+H				toggle hidden
+A				Maximize
