@@ -43,3 +43,4 @@ coverage
 /.emacs.d/cookies
 /.emacs.d/eshell
 /.emacs.d/url
+/.emacs.d/ac-comphist.dat
