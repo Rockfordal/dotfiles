@@ -73,17 +73,15 @@
 ; (custom-set-faces
   ; '(default ((t (:family "M+\ 1m" :slant normal :weight normal :height 170 :width normal)))))
 
-;; Fixa så man kan skriva brackets med ALT
-(if (eq system-type 'darwin)
-  ;; Fixa så man kan skriva brackets med ALT
-  (if (boundp 'ns-command-modifier)
-      (setq ns-command-modifier 'meta))
 
+(if (eq system-type 'darwin)
+;; Fixa ALT för brackets på mac
   (if (boundp 'ns-option-modifier)
       (setq ns-option-modifier nil))
-;(switch-to-buffer "anlu")
-(setq ns-option-modifier nil) ;; anlu test
-)
+
+;; Fixa cmd+x på mac
+  (if (boundp 'ns-command-modifier)
+      (setq ns-command-modifier 'meta)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -130,9 +128,10 @@
 
 ;; Cider 
 (setq cider-lein-command "/usr/local/bin/lein")
-(setq cider-known-endpoints '(("localhost" "24000")
-  ("fire" "fire.solidcrm.se" "24000")
-  ("urdb" "db.urkraft.se" "24000")
+(setq cider-known-endpoints '(
+  ("localhost" "7888")
+  ("fire"    "fire.solidcrm.se"    "24000")
+  ("urdb"    "db.urkraft.se"       "24000")
   ("quattro" "quattro.solidcrm.se" "24000")))
 (add-hook 'cider-mode-hook #'eldoc-mode) ; 'turn-on-eldoc-mode)
 ;(setq cider-auto-mode nil)
@@ -243,6 +242,8 @@
 
 ;; restclient
 (load "~/.emacs.d/lisp/restclient-20150513.131.el")
+
+(global-prettify-symbols-mode 1) ; lambda
 
 ;; Smex
 (require 'smex)
