@@ -37,3 +37,10 @@ C-c C-c				root
 g				refresh
 H				toggle hidden
 A				Maximize
+
+; Cider
+C-c C-k				kör
+C-c M-n				namespace
+
+; SSL tunnel
+ssh -L 5555:localhost:4242 staging
