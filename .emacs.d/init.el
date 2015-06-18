@@ -57,11 +57,12 @@
 ;(setq sml/no-confirm-load-theme 'solarized-dark)
 ;(load-theme 'monokai t)
 ;(load-theme 'noctilux t)
-;(load-theme 'wombat t) ; som tomorrow-night
+;(load-theme 'wombat t)                  ;som tomorrow-night
 ;(load-theme 'color-theme-jellybeans t)
 ;(load-theme 'tango t)
-(load-theme 'prius t) ; som jellybeans fast lite ljusare
-;(load-theme 'tango-dark t) ;lik jelllybeans
+;(load-theme 'prius t)                   ;som jellybeans fast lite ljusare
+;(load-theme 'tango-dark t)              ;lik jelllybeans
+(load-theme 'material t)
 
 ;(require '~/.emacs.d/lib/color-themes/color-theme-jellybeans)
 ;(require '~/.emacs.d/lib/color-themes/color-theme-oceandeep)
@@ -72,7 +73,6 @@
 ;(color-theme-sanityinc-tomorrow-night)
 ;(color-theme-sanityinc-solarized-dark)
 ;(color-theme-vibrant-ink)
-
 
 (if (eq system-type 'darwin)
   (set-default-font "Pragmata\ Pro-19")
@@ -94,17 +94,17 @@
 ; (custom-set-faces
   ; '(default ((t (:family "M+\ 1m" :slant normal :weight normal :height 170 :width normal)))))
 
-;; Fixa så man kan skriva brackets med ALT
-(if (eq system-type 'darwin)
-  ;; Fixa så man kan skriva brackets med ALT
-  (if (boundp 'ns-command-modifier)
-      (setq ns-command-modifier 'meta))
+;(eq system-type 'darwin)
 
+  ;; Fixa ALT för brackets på mac
+(if (eq system-type 'darwin)
   (if (boundp 'ns-option-modifier)
-      (setq ns-option-modifier nil))
-;(switch-to-buffer "anlu")
-(setq ns-option-modifier nil) ;; anlu test
-)
+      (setq ns-option-modifier nil)))
+
+  ;; Fixa cmd+x på mac
+(if (eq system-type 'darwin)
+  (if (boundp 'ns-command-modifier)
+      (setq ns-command-modifier 'meta)))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -213,37 +213,37 @@
 (add-to-list 'same-window-buffer-names "<em>nrepl</em>")
 
 ;; General Auto-Complete
-(require 'auto-complete-config)
-(setq ac-delay 0.0)
-(setq ac-quick-help-delay 0.5)
-(ac-config-default)
+;(require 'auto-complete-config)
+;(setq ac-delay 0.0)
+;(setq ac-quick-help-delay 0.5)
+;(ac-config-default)
 
 ;; ac-nrepl (Auto-complete for the nREPL)
-(require 'ac-nrepl)
-(add-hook 'cider-mode-hook 'ac-nrepl-setup)
-(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
-(add-to-list 'ac-modes 'cider-mode)
-(add-to-list 'ac-modes 'cider-repl-mode)
-(add-hook 'cider-mode-hook 'ac-cider-setup) ; anlu
+;(require 'ac-nrepl)
+;(add-hook 'cider-mode-hook 'ac-nrepl-setup)
+;(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
+;(add-to-list 'ac-modes 'cider-mode)
+;(add-to-list 'ac-modes 'cider-repl-mode)
+;(add-hook 'cider-mode-hook 'ac-cider-setup) ; anlu
 ;(ac-cider-setup)
 
 ;; Poping-up contextual documentation
-(eval-after-load "cider"
-  '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
+;(eval-after-load "cider"
+;  '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
 
 ;; Cider extra
-(add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
-(add-hook 'cider-repl-mode-hook #'rainbow-delimiters-mode)
+;(add-hook 'cider-repl-mode-hook #'smartparens-strict-mode)
+;(add-hook 'cider-repl-mode-hook #'rainbow-delimiters-mode)
 ;(Require 'cider-eval-sexp-fu)
 
 ;(global-set-key [f9] 'cider-jack-in)  ; C-c M-j
 ;(global-set-key [f11] 'speedbar)
 
-(defun set-auto-complete-as-completion-at-point-function ()
-  (setq completion-at-point-functions '(auto-complete)))
+;(defun set-auto-complete-as-completion-at-point-function ()
+;  (setq completion-at-point-functions '(auto-complete)))
 
-(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
-(add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
+;(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+;(add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
 
 
 ;; Highlight Parentheses
@@ -263,9 +263,9 @@
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;; restclient
-(load "~/.emacs.d/lisp/restclient-20150513.131.el")
+;(load "~/.emacs.d/lisp/restclient-20150513.131.el")
 
-;; Smex
+;; Smex  (access to recent commands)
 (require 'smex)
 (global-set-key (kbd "M-x") 'smex)
 ;(global-set-key (kbd "M-X") 'smex-major-mode-commands)
@@ -284,12 +284,23 @@
 (setq helm-dash-common-docsets '("Clojure")) ; Redis
 
 (evil-mode)
-(rainbow-delimiters-mode-enable)
-(smartparens-mode 1)
+(smartparens-mode)
 (require 'smartparens-config)
 (winner-mode) ; undo fönster
 (windmove-default-keybindings)
 ;(org-replace-disputed-keys)  ; en fix för nå i org, windmove? /Avdi G
+
+;; Enables rainbow-delimiters-mode in Emacs Lisp buffers
+(add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+
+;; Enables rainbow-delimiters-mode in Clojure buffers.
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+
+;; enables rainbow-delimiters-mode in other Lisp mode buffers.
+(add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
+
+(global-set-key (kbd "M-p") 'ace-window)
+
 
 (custom-set-variables
  '(blink-cursor-mode nil)
