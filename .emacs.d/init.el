@@ -1,19 +1,23 @@
 ;; MELPA
-(require 'package) ;; You might already have this line
-(require 'cl)
 
 ; Använd en lokal mirror
 ;(add-to-list 'load-path "~/.emacs.d/elpa-mirror/")
 ;(require 'elpa-mirror)
+; (expand-file-name "~/.emacs.d/elpa/package.el")
 
-;(when (< emacs-major-version 24)
-(add-to-list 'package-archives
-           ;;'("melpa" . "http://melpa.org/packages/") t)
-             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+;(when (>= emacs-major-version 24)
+    (require 'package)
+    (package-initialize)
+    (add-to-list 'package-archives
+	;'("melpa-stable" . "http://stable.melpa.org/packages/") t)
+	'("melpa" . "http://melpa.org/packages/") t)
+;        '("melpa" . "http://melpa.milkbox.net/packages/") t)
+    ;(add-to-list 'package-archives
+    ;	'("marmalade" . "http://marmalade-repo.org/packages/") t)
+;)
+(package-initialize)
+(require 'cl)
 
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(package-initialize) ;; You might already have this line
 
 ;(setq package-list '(evil smex))
 (defvar required-packages '(evil evil-org smex powerline projectile prodigy helm helm-projectile helm-dash clojure-mode color-theme-sanityinc-solarized nginx-mode clojure-cheatsheet cider neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens))
@@ -49,9 +53,26 @@
 
 
 (add-to-list 'custom-theme-load-path "~/.emacs.d/lib/color-themes")
+;'(custom-enabled-themes (quote (sanityinc-solarized-dark)))
 ;(setq sml/no-confirm-load-theme 'solarized-dark)
-;color-theme-sanityinc-solarized-dark
-;(load-theme 'solarized-dark)
+;(load-theme 'monokai t)
+;(load-theme 'noctilux t)
+;(load-theme 'wombat t) ; som tomorrow-night
+;(load-theme 'color-theme-jellybeans t)
+;(load-theme 'tango t)
+(load-theme 'prius t) ; som jellybeans fast lite ljusare
+;(load-theme 'tango-dark t) ;lik jelllybeans
+
+;(require '~/.emacs.d/lib/color-themes/color-theme-jellybeans)
+;(require '~/.emacs.d/lib/color-themes/color-theme-oceandeep)
+;(require '~/.emacs.d/lib/color-themes/color-theme-vibrant-ink)
+;(require '~/.emacs.d/lib/color-themes/zenburn)
+;(color-theme-oceandeep)
+;(color-theme-jellybeans)
+;(color-theme-sanityinc-tomorrow-night)
+;(color-theme-sanityinc-solarized-dark)
+;(color-theme-vibrant-ink)
+
 
 (if (eq system-type 'darwin)
   (set-default-font "Pragmata\ Pro-19")
@@ -73,15 +94,17 @@
 ; (custom-set-faces
   ; '(default ((t (:family "M+\ 1m" :slant normal :weight normal :height 170 :width normal)))))
 
-
+;; Fixa så man kan skriva brackets med ALT
 (if (eq system-type 'darwin)
-;; Fixa ALT för brackets på mac
+  ;; Fixa så man kan skriva brackets med ALT
+  (if (boundp 'ns-command-modifier)
+      (setq ns-command-modifier 'meta))
+
   (if (boundp 'ns-option-modifier)
       (setq ns-option-modifier nil))
-
-;; Fixa cmd+x på mac
-  (if (boundp 'ns-command-modifier)
-      (setq ns-command-modifier 'meta)))
+;(switch-to-buffer "anlu")
+(setq ns-option-modifier nil) ;; anlu test
+)
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -128,10 +151,9 @@
 
 ;; Cider 
 (setq cider-lein-command "/usr/local/bin/lein")
-(setq cider-known-endpoints '(
-  ("localhost" "7888")
-  ("fire"    "fire.solidcrm.se"    "24000")
-  ("urdb"    "db.urkraft.se"       "24000")
+(setq cider-known-endpoints '(("localhost" "24000")
+  ("fire" "fire.solidcrm.se" "24000")
+  ("urdb" "db.urkraft.se" "24000")
   ("quattro" "quattro.solidcrm.se" "24000")))
 (add-hook 'cider-mode-hook #'eldoc-mode) ; 'turn-on-eldoc-mode)
 ;(setq cider-auto-mode nil)
@@ -243,8 +265,6 @@
 ;; restclient
 (load "~/.emacs.d/lisp/restclient-20150513.131.el")
 
-(global-prettify-symbols-mode 1) ; lambda
-
 ;; Smex
 (require 'smex)
 (global-set-key (kbd "M-x") 'smex)
@@ -279,6 +299,8 @@
  '(inhibit-startup-screen t)
  '(menu-bar-mode nil)
  '(safe-local-variable-values (quote ((encoding . utf-8))))
+
+
  '(scroll-bar-mode nil)
 '(tool-bar-mode nil))
 
