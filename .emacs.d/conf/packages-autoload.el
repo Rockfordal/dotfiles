@@ -3,10 +3,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defvar required-packages '(evil evil-org smex powerline prodigy helm helm-dash clojure-mode color-theme-sanityinc-solarized nginx-mode clojure-cheatsheet neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens magit markdown-mode clj-refactor undo-tree tree-mode windata))
-;(defvar required-packages '(evil evil-org smex powerline prodigy helm helm-dash clojure-mode color-theme-sanityinc-solarized nginx-mode clojure-cheatsheet neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens magit markdown-mode clj-refactor undo-tree helm-projectile))
-;(defvar required-packages '(evil evil-org smex powerline prodigy helm helm-dash clojure-mode color-theme-sanityinc-solarized nginx-mode clojure-cheatsheet neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens magit markdown-mode clj-refactor undo-tree helm-projectile tree-mode windata company))
 
 (require 'cl)
+=======
 
 ; tree persistent-soft pcache goto-chg
 
