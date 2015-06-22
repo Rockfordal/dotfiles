@@ -1,5 +1,5 @@
 (load "~/.emacs.d/conf/packages")
-;(load "~/.emacs.d/conf/packages-autoload")
+(load "~/.emacs.d/conf/packages-autoload")
 (load "~/.emacs.d/conf/themes")
 (load "~/.emacs.d/conf/fonts")
 (load "~/.emacs.d/conf/files")      ;; Projectile, Helm
