@@ -36,6 +36,7 @@
 ;; Markdown-mode
 (require 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.bash_aliases\\'" . sh-mode))
 
 ;; Restclient
 (load "~/.emacs.d/lisp/restclient-20150513.131.el")
