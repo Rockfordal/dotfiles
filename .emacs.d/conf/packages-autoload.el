@@ -2,9 +2,9 @@
 ;; Packages autoload
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defvar required-packages '(evil evil-org smex powerline prodigy helm helm-dash clojure-mode color-theme-sanityinc-solarized nginx-mode clojure-cheatsheet neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens magit markdown-mode clj-refactor undo-tree helm-projectile tree-mode windata company))
-;(defvar required-packages '(evil evil-org smex powerline prodigy helm helm-dash clojure-mode color-theme-sanityinc-solarized nginx-mode clojure-cheatsheet neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens magit markdown-mode clj-refactor undo-tree tree-mode windata))
-(defvar required-packages '(evil evil-org smex powerline prodigy helm helm-dash clojure-mode color-theme-sanityinc-solarized nginx-mode clojure-cheatsheet neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens magit markdown-mode clj-refactor undo-tree helm-projectile))
+(defvar required-packages '(evil evil-org smex powerline prodigy helm helm-dash clojure-mode color-theme-sanityinc-solarized nginx-mode clojure-cheatsheet neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens magit markdown-mode clj-refactor undo-tree tree-mode windata))
+;(defvar required-packages '(evil evil-org smex powerline prodigy helm helm-dash clojure-mode color-theme-sanityinc-solarized nginx-mode clojure-cheatsheet neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens magit markdown-mode clj-refactor undo-tree helm-projectile))
+;(defvar required-packages '(evil evil-org smex powerline prodigy helm helm-dash clojure-mode color-theme-sanityinc-solarized nginx-mode clojure-cheatsheet neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens magit markdown-mode clj-refactor undo-tree helm-projectile tree-mode windata company))
 
 (require 'cl)
 
@@ -20,6 +20,16 @@
         finally (return t)))
 
 ;; if not all packages are installed, check one by one and install the missing ones.
+(unless (packages-installed-p)
+; check for new packages (package versions)
+(message "%s" "Emacs is now refreshing its package database...")
+(package-refresh-contents)
+(message "%s" " done.")
+; install the missing packages
+(dolist (p required-packages)
+(unless (package-installed-p p)
+(package-install p))))
+
 ; if not all packages are installed, check one by one and install the missing ones.
 (unless (packages-installed-p)
 ; check for new packages (package versions)
