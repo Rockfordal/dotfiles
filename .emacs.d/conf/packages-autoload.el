@@ -18,6 +18,16 @@
         finally (return t)))
 
 ;; if not all packages are installed, check one by one and install the missing ones.
+(unless (packages-installed-p)
+; check for new packages (package versions)
+(message "%s" "Emacs is now refreshing its package database...")
+(package-refresh-contents)
+(message "%s" " done.")
+; install the missing packages
+(dolist (p required-packages)
+(unless (package-installed-p p)
+(package-install p))))
+
 ; if not all packages are installed, check one by one and install the missing ones.
 (unless (packages-installed-p)
 ; check for new packages (package versions)
