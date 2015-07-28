@@ -41,3 +41,12 @@
 (require 'windata)
 (require 'dirtree)
 (autoload 'dirtree "dirtree" "Add directory to tree view" t)
+
+;; Cider REPL refresh
+(defun cider-namespace-refresh ()
+  (interactive)
+  (cider-interactive-eval
+   "(require 'clojure.tools.namespace.repl)
+    (clojure.tools.namespace.repl/refresh)"))
+
+(define-key clojure-mode-map (kbd "M-r") 'cider-namespace-refresh)
