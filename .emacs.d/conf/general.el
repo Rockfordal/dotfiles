@@ -2,6 +2,8 @@
 ;; General
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(global-set-key (kbd "C-,") 'comment-or-uncomment-region)
+
 (global-linum-mode 1)            ;; line number
 (windmove-default-keybindings)   ;; shift moves between windows
 
