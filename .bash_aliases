@@ -11,6 +11,7 @@ alias benqu="xcalib ~/Dokument/benq/benq_xl2420t_user.icm"
 alias openarena="off && mouseaccel0 && openarena"
 alias torrent="rtorrent -p 51414-51414"
 
+alias cl="cd /home/andersl/dev/cs/fler/ren; rlwrap lein trampoline run -m clojure.main"
 
 #heroku
 #echo 'PATH="/usr/local/heroku/bin:$PATH"' >> ~/.profile
@@ -20,7 +21,7 @@ alias heroku="/usr/local/heroku/bin/heroku"
 # shell
 alias c="clear"
 alias rvm1=". ~/.bashrc.local"
-alias storapaket="for i in $(qlist -CI | sort -u) ; do qsize -C $i ; done | awk '{print $6,$1}' | sort -nu"
+#alias storapaket="for i in $(qlist -CI | sort -u) ; do qsize -C $i ; done | awk '{print $6,$1}' | sort -nu"
 alias ctagindex="ctags -R --options=/pub/ctags.conf"
 # alias newlineall="for f in *.rb; do; ed -s <<< w $f; done"
 

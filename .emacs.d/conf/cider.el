@@ -1,12 +1,21 @@
 ;; Cider 
 (setq cider-lein-command "/usr/local/bin/lein")
 (setq nrepl-popup-stacktraces nil)
-(setq cider-known-endpoints '(("localhost" "24000")
-  ("fire" "fire.solidcrm.se" "24000")
-  ("urdb" "db.urkraft.se" "24000")
-  ("quattro" "quattro.solidcrm.se" "24000")))
+(setq cider-known-endpoints '(("lokal" "localhost" "7888")
+                              ;("fire" "fire.solidcrm.se" "24000")
+                              ;("urdb" "db.urkraft.se" "24000")
+                              ;("quattro" "quattro.solidcrm.se" "24000")
+                              ))
 
 (add-to-list 'same-window-buffer-names "<em>nrepl</em>")
+
+(defun cider-namespace-refresh ()
+  (interactive)
+  (cider-interactive-eval
+   "(require 'clojure.tools.namespace.repl)
+    (clojure.tools.namespace.repl/refresh)"))
+
+;(define-key clojure-mode-map (kbd "M-r") 'cider-namespace-refresh)
 
 ;(add-hook 'cider-mode-hook #'eldoc-mode) ; 'turn-on-eldoc-mode)
 
@@ -14,18 +23,17 @@
 ;(setq nrepl-log-messages t)
 ;(setq nrepl-hide-special-buffers t)
 ;(setq cider-repl-tab-command #'indent-for-tab-command)
-;(setq cider-prefer-local-resources t) ; local vs tramp mode
-;(setq cider-repl-pop-to-buffer-on-connect nil)
-;(setq cider-show-error-buffer nil)
-;(setq cider-show-error-buffer 'except-in-repl) ; except-in-repl or only-in-repl
+;(setq cider-prefer-local-resources t) ; prefer local over remote tramp when both a.
+;(setq cider-repl-pop-to-buffer-on-connect nil) ; prevent auto-display of REPL buffer in separate window
+(setq cider-show-error-buffer nil) ; nil 'except-in-repl
 ;(setq cider-auto-select-error-buffer nil)
 ;(setq cider-stacktrace-default-filters '(tooling dup))
 ;(setq cider-stacktrace-fill-column 80)
 ;(setq nrepl-buffer-name-separator "-")
 ;(setq nrepl-buffer-name-show-port t)
 ;(setq cider-repl-display-in-current-window t)
-;(setq cider-prompt-save-file-on-load nil)
-;(setq cider-repl-result-prefix ";; => ")
+(setq cider-prompt-save-file-on-load nil)
+(setq cider-repl-result-prefix ";; => ")
 ;(setq cider-repl-use-clojure-font-lock t)
 ;(setq cider-switch-to-repl-command #'cider-switch-to-current-repl-buffer)
 
@@ -37,9 +45,14 @@
 
 ;; Cider Autocomplete
 ;(global-company-mode)
-;(add-hook 'cider-repl-mode-hook #'company-mode)
-;(add-hook 'cider-mode-hook #'company-mode)
+(add-hook 'cider-repl-mode-hook #'company-mode)
+(add-hook 'cider-mode-hook #'company-mode)
 ;ido-everywhere ;ido-ubiquitous ;ido-flex
+
+; manually actiivated:
+;(setq company-idle-delay nil) ; never start completions automatically
+;(global-set-key (kbd "M-TAB") #'company-complete) ; use meta+tab, aka C-M-i, as manual trigger
+
 
 ;(require 'ac-cider)
 ;(add-hook 'cider-mode-hook 'ac-flyspell-workaround)

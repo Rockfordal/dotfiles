@@ -2,7 +2,11 @@
 ;; Packages autoload
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defvar required-packages '(evil evil-org smex powerline prodigy helm helm-dash clojure-mode color-theme-sanityinc-solarized nginx-mode clojure-cheatsheet neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens magit markdown-mode clj-refactor undo-tree tree-mode windata))
+(defvar required-packages '(evil evil-org smex powerline prodigy helm helm-dash clojure-mode color-theme-sanityinc-solarized
+                            nginx-mode clojure-cheatsheet neotree rainbow-mode rainbow-delimiters ido-ubiquitous smartparens
+                            magit markdown-mode undo-tree tree-mode windata))
+
+; clj-refactor verkade dra in git-rebase-mode, git-commit-mode som sabbar magit
 
 (require 'cl)
 

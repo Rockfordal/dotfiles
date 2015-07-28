@@ -1,5 +1,5 @@
 (load "~/.emacs.d/conf/packages")
-(load "~/.emacs.d/conf/packages-autoload")
+;(load "~/.emacs.d/conf/packages-autoload")
 (load "~/.emacs.d/conf/themes")
 (load "~/.emacs.d/conf/fonts")
 (load "~/.emacs.d/conf/files")      ;; Projectile, Helm
@@ -11,12 +11,6 @@
 
 ;; Evil mode
 (require 'evil) (evil-mode 1)
-
-;; Powerline
-(require 'powerline) (powerline-center-theme) ; default center
-
-; Window Undo
-(require 'winner) (winner-mode 1)
 
 ;; Highlight Parentheses
 (require 'paren) (show-paren-mode 1)
@@ -34,6 +28,12 @@
 ;; Magit
 (require 'magit)
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;; Powerline
+;(require 'powerline) (powerline-center-theme) ; default center
+
+; Window Undo
+;(require 'winner) (winner-mode 1)
 
 ;; Dirtree
 (load (concat user-emacs-directory "libs/" "dirtree.el"))
