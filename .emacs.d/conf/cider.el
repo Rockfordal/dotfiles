@@ -15,6 +15,11 @@
    "(require 'clojure.tools.namespace.repl)
     (clojure.tools.namespace.repl/refresh)"))
 
+; För att växla till cljs:
+;(use 'figwheel-sidecar.repl-api)
+;(cljs-repl)
+
+
 ;(define-key clojure-mode-map (kbd "M-r") 'cider-namespace-refresh)
 
 ;(add-hook 'cider-mode-hook #'eldoc-mode) ; 'turn-on-eldoc-mode)
