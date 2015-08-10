@@ -21,5 +21,5 @@
 ;(color-theme-oceandeep)
 ;(color-theme-jellybeans)
 ;(color-theme-sanityinc-tomorrow-night)
-(color-theme-sanityinc-solarized-dark)
+;(color-theme-sanityinc-solarized-dark)
 ;(color-theme-vibrant-ink)
