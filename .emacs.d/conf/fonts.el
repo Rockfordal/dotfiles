@@ -2,13 +2,14 @@
 ;; Fonts
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;(if (eq system-type 'darwin)
+(if (eq system-type 'darwin)
+  (set-default-font "Input Mono-14")
+  (set-default-font "Input Mono-13")
 ;  (set-default-font "Pragmata\ Pro-19")
-;  (set-default-font "Pragmata\ Pro-18"))
+;  (set-default-font "Pragmata\ Pro-18")
+)
 
-(set-default-font "Input Mono-13")
 ;(set-default-font "FiraMono-13")
-;(set-default-font "Pragmata Pro-14")
 ;(set-default-font "Hasklig-13")
 ;(set-default-font "Input Mono-13:bold")
 ;(set-default-font "FiraCode-14") ; av tonsky, ej emacs-stöd än
@@ -24,5 +25,3 @@
 ;(set-default-font "Anonymous Pro-19")
 ;(set-default-font "Monaco-18")
 ;(set-default-font "Courier New-20")
-
-; '(default ((t (:family "M+\ 1m" :slant normal :weight normal :height 170 :width normal)))))
