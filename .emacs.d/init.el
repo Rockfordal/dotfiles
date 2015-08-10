@@ -9,6 +9,8 @@
 (load "~/.emacs.d/conf/fix")        ;; osx meta alt
 (load "~/.emacs.d/conf/hooks")
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;; Evil mode
 (require 'evil) (evil-mode 1)
 
