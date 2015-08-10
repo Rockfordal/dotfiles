@@ -7,6 +7,9 @@ git push -u origin test
 # hämta ner och tracka remote branch
 git checkout --track origin/test
 
+# tracka redan hämtad branch
+git branch --track komp origin/test
+
 # utför rebase i temporär branch om du är osäker
 git co feature
 git co -b temporary-branch
